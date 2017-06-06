@@ -265,25 +265,27 @@
 <p>This is why mermaid was born, a simple markdown-like script language for generating charts from text via javascript. <a href="http://knsv.github.io/mermaid/live_editor" target="_blank">Try it using our editor</a>.</p>
 <p>Code examples below:</p>
 <h3 id="an-example-of-a-flowchart">An example of a flowchart</h3>
-<pre><code>graph TD;
+<pre><code class="lang-mermaid">graph TD;
     A--&gt;B;
     A--&gt;C;
     B--&gt;D;
     C--&gt;D;
-</code></pre><h3 id="an-example-of-a-sequence-diagram">An example of a sequence diagram</h3>
-<pre><code>sequenceDiagram
+</code></pre>
+<h3 id="an-example-of-a-sequence-diagram">An example of a sequence diagram</h3>
+<pre><code class="lang-mermaid">sequenceDiagram
     participant Alice
     participant Bob
     Alice-&gt;John: Hello John, how are you?
     loop Healthcheck
         John-&gt;John: Fight against hypochondria
     end
-    Note right of John: Rational thoughts &amp;lt;br/&gt;prevail...
+    Note right of John: Rational thoughts &lt;br/&gt;prevail...
     John--&gt;Alice: Great!
     John-&gt;Bob: How about you?
     Bob--&gt;John: Jolly good!
-</code></pre><h3 id="example-code-for-a-gantt-diagram">Example code for a gantt diagram</h3>
-<pre><code>gantt
+</code></pre>
+<h3 id="example-code-for-a-gantt-diagram">Example code for a gantt diagram</h3>
+<pre><code class="lang-mermaid">gantt
         dateFormat  YYYY-MM-DD
         title Adding GANTT diagram functionality to mermaid
         section A section
@@ -298,7 +300,8 @@
         Future task in critical line        :crit, 5d
         Create tests for renderer           :2d
         Add to mermaid                      :1d
-</code></pre><p>Play with mermaid using this <a href="https://danielmschmidt.github.io/mermaid-demo/" target="_blank">editor</a> or this <a href="https://knsv.github.io/mermaid/live_editor/" target="_blank">live editor</a>.</p>
+</code></pre>
+<p>Play with mermaid using this <a href="https://danielmschmidt.github.io/mermaid-demo/" target="_blank">editor</a> or this <a href="https://knsv.github.io/mermaid/live_editor/" target="_blank">live editor</a>.</p>
 <h2 id="credits">Credits</h2>
 <p>Many thanks to the <a href="https://d3js.org/" target="_blank">d3</a> and <a href="https://github.com/cpettitt/dagre-d3" target="_blank">dagre-d3</a> projects for providing the graphical layout and drawing libraries!
 Thanks also to the <a href="https://bramp.github.io/js-sequence-diagrams" target="_blank">js-sequence-diagram</a> project for usage of the grammar for the sequence diagrams.</p>
@@ -371,7 +374,7 @@ Thanks also to the <a href="https://bramp.github.io/js-sequence-diagrams" target
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"mermaid","order":0,"level":"1.1","depth":1,"next":{"title":"Usage","level":"1.2","depth":1,"path":"usage.md","ref":"usage.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["addcssjs"],"pluginsConfig":{"addcssjs":{"css":["./styles/mermaid.forest.min.css"],"js":["./scripts/mermaid.min.js","./scripts/index.js"]},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README.md","mtime":"2017-06-04T11:15:55.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-05T10:26:54.646Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"mermaid","order":0,"level":"1.1","depth":1,"next":{"title":"Usage","level":"1.2","depth":1,"path":"usage.md","ref":"usage.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["addcssjs"],"pluginsConfig":{"addcssjs":{"css":["./styles/mermaid.forest.min.css"],"js":["./scripts/mermaid.min.js","./scripts/index.js"]},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README.md","mtime":"2017-06-06T13:58:09.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-06T14:17:00.626Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
