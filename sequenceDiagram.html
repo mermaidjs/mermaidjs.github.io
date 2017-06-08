@@ -187,7 +187,20 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8" data-path="development.html">
+        <li class="chapter " data-level="1.8" data-path="mermaidAPI.html">
+            
+                <a href="mermaidAPI.html">
+            
+                    
+                    mermaidAPI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="development.html">
             
                 <a href="development.html">
             
@@ -200,7 +213,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.9" data-path="upgrading.html">
+        <li class="chapter " data-level="1.10" data-path="upgrading.html">
             
                 <a href="upgrading.html">
             
@@ -262,12 +275,7 @@
 <blockquote>
 <p>A Sequence diagram is an interaction diagram that shows how processes operate with one another and in what order.</p>
 </blockquote>
-<p>Mermaid can render sequence diagrams. The code snippet below:</p>
-<pre><code>%% Example of sequence diagram
-sequenceDiagram
-    Alice-&gt;&gt;John: Hello John, how are you?
-    John--&gt;&gt;Alice: Great!
-</code></pre><p>Renders the following diagram:</p>
+<p>Mermaid can render sequence diagrams.</p>
 <pre><code class="lang-mermaid">sequenceDiagram
     Alice-&gt;&gt;John: Hello John, how are you?
     John--&gt;&gt;Alice: Great!
@@ -278,13 +286,6 @@ sequenceDiagram
 rendered in order of appearance in the diagram source text. Sometimes you might want to show the participants in a
 different order than how they appear in the first message. It is possible to specify the actor&apos;s order of
 appearance by doing the following:</p>
-<pre><code>%% Example of sequence diagram
-sequenceDiagram
-    participant John
-    participant Alice
-    Alice-&gt;&gt;John: Hello John, how are you?
-    John--&gt;&gt;Alice: Great!
-</code></pre><p>Renders to the diagram below:</p>
 <pre><code class="lang-mermaid">sequenceDiagram
     participant John
     participant Alice
@@ -331,12 +332,6 @@ sequenceDiagram
 </table>
 <h2 id="activations">Activations</h2>
 <p>It is possible to activate and deactivate an actor. (de)activation can be dedicated declarations:</p>
-<pre><code>sequenceDiagram
-    Alice-&gt;&gt;John: Hello John, how are you?
-    activate John
-    John--&gt;&gt;Alice: Great!
-    deactivate John
-</code></pre><p>Renders to the diagram below:</p>
 <pre><code class="lang-mermaid">sequenceDiagram
     Alice-&gt;&gt;John: Hello John, how are you?
     activate John
@@ -344,16 +339,11 @@ sequenceDiagram
     deactivate John
 </code></pre>
 <p>There is also a shortcut notation by appending <code>+</code>/<code>-</code> suffix to the message arrow:</p>
-<pre><code>sequenceDiagram
+<pre><code class="lang-mermaid">sequenceDiagram
     Alice-&gt;&gt;+John: Hello John, how are you?
     John--&gt;&gt;-Alice: Great!
-</code></pre><p>Activations can be stacked for same actor:</p>
-<pre><code>sequenceDiagram
-    Alice-&gt;&gt;+John: Hello John, how are you?
-    Alice-&gt;&gt;+John: John, can you hear me?
-    John--&gt;&gt;-Alice: Hi Alice, I can hear you!
-    John--&gt;&gt;-Alice: I feel great!
-</code></pre><p>Stacked activations look like this:</p>
+</code></pre>
+<p>Activations can be stacked for same actor:</p>
 <pre><code class="lang-mermaid">sequenceDiagram
     Alice-&gt;&gt;+John: Hello John, how are you?
     Alice-&gt;&gt;+John: John, can you hear me?
@@ -364,20 +354,12 @@ sequenceDiagram
 <p>It is possible to add notes to a sequence diagram. This is done by the notation
 Note [ right of | left of | over ] [Actor]: Text in note content</p>
 <p>See the example below:</p>
-<pre><code>%% Example of sequence diagram
-sequenceDiagram
-    participant John
-    Note right of John: Text in note
-</code></pre><p>Renders to the diagram below:</p>
 <pre><code class="lang-mermaid">sequenceDiagram
     participant John
     Note right of John: Text in note
 </code></pre>
 <p>It is also possible to create notes spanning two participants:</p>
-<pre><code>sequenceDiagram
-    Alice-&gt;John: Hello John, how are you?
-    Note over Alice,John: A typical interaction
-</code></pre><pre><code class="lang-mermaid">sequenceDiagram
+<pre><code class="lang-mermaid">sequenceDiagram
     Alice-&gt;John: Hello John, how are you?
     Note over Alice,John: A typical interaction
 </code></pre>
@@ -386,14 +368,8 @@ sequenceDiagram
 <pre><code>loop Loop text
 ... statements ...
 end
-</code></pre><p>See the example below</p>
-<pre><code>%% Example of sequence diagram
-sequenceDiagram
-    Alice-&gt;John: Hello John, how are you?
-    loop Reply every minute
-        John--&gt;Alice: Great!
-    end
-</code></pre><pre><code class="lang-mermaid">sequenceDiagram
+</code></pre><p>See the example below:</p>
+<pre><code class="lang-mermaid">sequenceDiagram
     Alice-&gt;John: Hello John, how are you?
     loop Every minute
         John--&gt;Alice: Great!
@@ -410,19 +386,8 @@ end
 <pre><code>opt Describing text
 ... statements ...
 end
-</code></pre><p>See the example below</p>
-<pre><code>%% Example of sequence diagram
-    sequenceDiagram
-        Alice-&gt;&gt;Bob: Hello Bob, how are you?
-        alt is sick
-            Bob-&gt;&gt;Alice: Not so good :(
-        else is well
-            Bob-&gt;&gt;Alice: Feeling fresh like a daisy
-        end
-        opt Extra response
-            Bob-&gt;&gt;Alice: Thanks for asking
-        end
-</code></pre><pre><code class="lang-mermaid">sequenceDiagram
+</code></pre><p>See the example below:</p>
+<pre><code class="lang-mermaid">sequenceDiagram
     Alice-&gt;&gt;Bob: Hello Bob, how are you?
     alt is sick
         Bob-&gt;&gt;Alice: Not so good :(
@@ -495,8 +460,7 @@ end
 </tbody>
 </table>
 <h3 id="sample-stylesheet">Sample stylesheet</h3>
-<pre><code class="lang-css">
-<span class="hljs-selector-tag">body</span> {
+<pre><code class="lang-css"><span class="hljs-selector-tag">body</span> {
     <span class="hljs-attribute">background</span>: white;
 }
 
@@ -578,18 +542,19 @@ end
 </code></pre>
 <h2 id="configuration">Configuration</h2>
 <p>Is it possible to adjust the margins for rendering the sequence diagram.</p>
-<p>This is done by defining <strong>mermaid.sequenceConfig</strong> or by the CLI to use a json file with the configuration.
+<p>This is done by defining <code>mermaid.sequenceConfig</code> or by the CLI to use a json file with the configuration.
 How to use the CLI is described in the <a href="#mermaid-cli8">mermaidCLI</a> page.
-<strong>mermaid.sequenceConfig</strong> can be set to a JSON string with config parameters or the corresponding object.</p>
-<pre><code>mermaid.sequenceConfig = {
-    diagramMarginX:50,
-    diagramMarginY:10,
-    boxTextMargin:5,
-    noteMargin:10,
-    messageMargin:35,
-    mirrorActors:true
-    };
-</code></pre><h3 id="possible-configration-params">Possible configration params:</h3>
+<code>mermaid.sequenceConfig</code> can be set to a JSON string with config parameters or the corresponding object.</p>
+<pre><code class="lang-javascript">mermaid.sequenceConfig = {
+    diagramMarginX:<span class="hljs-number">50</span>,
+    diagramMarginY:<span class="hljs-number">10</span>,
+    boxTextMargin:<span class="hljs-number">5</span>,
+    noteMargin:<span class="hljs-number">10</span>,
+    messageMargin:<span class="hljs-number">35</span>,
+    mirrorActors:<span class="hljs-literal">true</span>
+};
+</code></pre>
+<h3 id="possible-configration-params">Possible configration params:</h3>
 <table>
 <thead>
 <tr>
@@ -654,7 +619,7 @@ How to use the CLI is described in the <a href="#mermaid-cli8">mermaidCLI</a> pa
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Sequence diagram","order":3,"level":"1.4","depth":1,"next":{"title":"Gantt diagram","level":"1.5","depth":1,"path":"gantt.md","ref":"gantt.md","articles":[]},"previous":{"title":"Flowchat","level":"1.3","depth":1,"path":"flowchart.md","ref":"flowchart.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["addcssjs"],"pluginsConfig":{"addcssjs":{"css":["./styles/mermaid.forest.min.css"],"js":["./scripts/mermaid.min.js","./scripts/index.js"]},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"sequenceDiagram.md","mtime":"2017-06-04T11:17:24.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-06T14:17:00.626Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Sequence diagram","level":"1.4","depth":1,"next":{"title":"Gantt diagram","level":"1.5","depth":1,"path":"gantt.md","ref":"gantt.md","articles":[]},"previous":{"title":"Flowchat","level":"1.3","depth":1,"path":"flowchart.md","ref":"flowchart.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["addcssjs"],"pluginsConfig":{"addcssjs":{"css":["./styles/mermaid.forest.min.css"],"js":["./scripts/mermaid.min.js","./scripts/index.js"]},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"sequenceDiagram.md","mtime":"2017-06-08T09:12:59.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-08T09:46:09.158Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

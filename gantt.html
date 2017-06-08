@@ -187,7 +187,20 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8" data-path="development.html">
+        <li class="chapter " data-level="1.8" data-path="mermaidAPI.html">
+            
+                <a href="mermaidAPI.html">
+            
+                    
+                    mermaidAPI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="development.html">
             
                 <a href="development.html">
             
@@ -200,7 +213,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.9" data-path="upgrading.html">
+        <li class="chapter " data-level="1.10" data-path="upgrading.html">
             
                 <a href="upgrading.html">
             
@@ -262,18 +275,7 @@
 <blockquote>
 <p>A Gantt chart is a type of bar chart, first developed by Karol Adamiecki in 1896, and independently by Henry Gantt in the 1910s, that illustrates a project schedule. Gantt charts illustrate the start and finish dates of the terminal elements and summary elements of a project.</p>
 </blockquote>
-<p>Mermaid can render Gantt diagrams. The code snippet below:</p>
-<pre><code>%% Example of sequence diagram
-gantt
-    title A Gantt Diagram
-
-    section Section
-    A task           :a1, 2014-01-01, 30d
-    Another task     :after a1  , 20d
-    section Another
-    Task in sec      :2014-01-12  , 12d
-    another task      : 24d
-</code></pre><p>Renders the following diagram:</p>
+<p>Mermaid can render Gantt diagrams.</p>
 <pre><code class="lang-mermaid">gantt
     title A Gantt Diagram
     dateFormat  YYYY-MM-DD
@@ -285,35 +287,6 @@ gantt
     another task      : 24d
 </code></pre>
 <h2 id="syntax">Syntax</h2>
-<pre><code>%% Example with slection of syntaxes
-        gantt
-        dateFormat  YYYY-MM-DD
-        title Adding GANTT diagram functionality to mermaid
-
-        section A section
-        Completed task            :done,    des1, 2014-01-06,2014-01-08
-        Active task               :active,  des2, 2014-01-09, 3d
-        Future task               :         des3, after des2, 5d
-        Future task2              :         des4, after des3, 5d
-
-        section Critical tasks
-        Completed task in the critical line :crit, done, 2014-01-06,24h
-        Implement parser and jison          :crit, done, after des1, 2d
-        Create tests for parser             :crit, active, 3d
-        Future task in critical line        :crit, 5d
-        Create tests for renderer           :2d
-        Add to mermaid                      :1d
-
-        section Documentation
-        Describe gantt syntax               :active, a1, after des1, 3d
-        Add gantt diagram to demo page      :after a1  , 20h
-        Add another diagram to demo page    :doc1, after a1  , 48h
-
-        section Last section
-        Describe gantt syntax               :after doc1, 3d
-        Add gantt diagram to demo page      :20h
-        Add another diagram to demo page    :48h
-</code></pre><p>Renders like below:</p>
 <pre><code class="lang-mermaid">gantt
        dateFormat  YYYY-MM-DD
        title Adding GANTT diagram functionality to mermaid
@@ -350,7 +323,7 @@ gantt
 <p>Tbd</p>
 <h3 id="date-format">Date format</h3>
 <p>Tbd</p>
-<h4 id="diagram-definition">Diagram definition</h4>
+<h3 id="diagram-definition">Diagram definition</h3>
 <p>Input    Example    Description:</p>
 <pre><code>YYYY    2014    4 digit year
 YY    14    2 digit year
@@ -374,7 +347,7 @@ SS    0..99    Hundreds of a second
 SSS    0..999    Thousandths of a second
 Z ZZ    +12:00    Offset from UTC as +-HH:mm, +-HHmm, or Z
 </code></pre><p>More info in: <a href="http://momentjs.com/docs/#/parsing/string-format/" target="_blank">http://momentjs.com/docs/#/parsing/string-format/</a></p>
-<h4 id="scale">Scale</h4>
+<h3 id="scale">Scale</h3>
 <pre><code>%a - abbreviated weekday name.
 %A - full weekday name.
 %b - abbreviated month name.
@@ -462,68 +435,65 @@ Z ZZ    +12:00    Offset from UTC as +-HH:mm, +-HHmm, or Z
 </tbody>
 </table>
 <h3 id="sample-stylesheet">Sample stylesheet</h3>
-<pre><code class="lang-css">
-            <span class="hljs-selector-class">.grid</span> <span class="hljs-selector-class">.tick</span> {
-                <span class="hljs-attribute">stroke</span>: lightgrey;
-                <span class="hljs-attribute">opacity</span>: <span class="hljs-number">0.3</span>;
-                <span class="hljs-attribute">shape-rendering</span>: crispEdges;
-            }
-            <span class="hljs-selector-class">.grid</span> <span class="hljs-selector-tag">path</span> {
-                <span class="hljs-attribute">stroke-width</span>: <span class="hljs-number">0</span>;
-            }
+<pre><code class="lang-css"><span class="hljs-selector-class">.grid</span> <span class="hljs-selector-class">.tick</span> {
+    <span class="hljs-attribute">stroke</span>: lightgrey;
+    <span class="hljs-attribute">opacity</span>: <span class="hljs-number">0.3</span>;
+    <span class="hljs-attribute">shape-rendering</span>: crispEdges;
+}
+<span class="hljs-selector-class">.grid</span> <span class="hljs-selector-tag">path</span> {
+    <span class="hljs-attribute">stroke-width</span>: <span class="hljs-number">0</span>;
+}
 
+<span class="hljs-selector-id">#tag</span> {
+    <span class="hljs-attribute">color</span>: white;
+    <span class="hljs-attribute">background</span>: <span class="hljs-number">#FA283D</span>;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">150px</span>;
+    <span class="hljs-attribute">position</span>: absolute;
+    <span class="hljs-attribute">display</span>: none;
+    <span class="hljs-attribute">padding</span>:<span class="hljs-number">3px</span> <span class="hljs-number">6px</span>;
+    <span class="hljs-attribute">margin-left</span>: -<span class="hljs-number">80px</span>;
+    <span class="hljs-attribute">font-size</span>: <span class="hljs-number">11px</span>;
+}
 
-            <span class="hljs-selector-id">#tag</span> {
-                <span class="hljs-attribute">color</span>: white;
-                <span class="hljs-attribute">background</span>: <span class="hljs-number">#FA283D</span>;
-                <span class="hljs-attribute">width</span>: <span class="hljs-number">150px</span>;
-                <span class="hljs-attribute">position</span>: absolute;
-                <span class="hljs-attribute">display</span>: none;
-                <span class="hljs-attribute">padding</span>:<span class="hljs-number">3px</span> <span class="hljs-number">6px</span>;
-                <span class="hljs-attribute">margin-left</span>: -<span class="hljs-number">80px</span>;
-                <span class="hljs-attribute">font-size</span>: <span class="hljs-number">11px</span>;
-            }
-
-
-
-            <span class="hljs-selector-id">#tag</span><span class="hljs-selector-pseudo">:before</span> {
-                <span class="hljs-attribute">border</span>: solid transparent;
-                <span class="hljs-attribute">content</span>: <span class="hljs-string">&apos; &apos;</span>;
-                <span class="hljs-attribute">height</span>: <span class="hljs-number">0</span>;
-                <span class="hljs-attribute">left</span>: <span class="hljs-number">50%</span>;
-                <span class="hljs-attribute">margin-left</span>: -<span class="hljs-number">5px</span>;
-                <span class="hljs-attribute">position</span>: absolute;
-                <span class="hljs-attribute">width</span>: <span class="hljs-number">0</span>;
-                <span class="hljs-attribute">border-width</span>: <span class="hljs-number">10px</span>;
-                <span class="hljs-attribute">border-bottom-color</span>: <span class="hljs-number">#FA283D</span>;
-                <span class="hljs-attribute">top</span>: -<span class="hljs-number">20px</span>;
-            }
-            <span class="hljs-selector-class">.taskText</span> {
-                <span class="hljs-attribute">fill</span>:white;
-                <span class="hljs-attribute">text-anchor</span>:middle;
-            }
-            <span class="hljs-selector-class">.taskTextOutsideRight</span> {
-                <span class="hljs-attribute">fill</span>:black;
-                <span class="hljs-attribute">text-anchor</span>:start;
-            }
-            <span class="hljs-selector-class">.taskTextOutsideLeft</span> {
-                <span class="hljs-attribute">fill</span>:black;
-                <span class="hljs-attribute">text-anchor</span>:end;
-            }
+<span class="hljs-selector-id">#tag</span><span class="hljs-selector-pseudo">:before</span> {
+    <span class="hljs-attribute">border</span>: solid transparent;
+    <span class="hljs-attribute">content</span>: <span class="hljs-string">&apos; &apos;</span>;
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">0</span>;
+    <span class="hljs-attribute">left</span>: <span class="hljs-number">50%</span>;
+    <span class="hljs-attribute">margin-left</span>: -<span class="hljs-number">5px</span>;
+    <span class="hljs-attribute">position</span>: absolute;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">0</span>;
+    <span class="hljs-attribute">border-width</span>: <span class="hljs-number">10px</span>;
+    <span class="hljs-attribute">border-bottom-color</span>: <span class="hljs-number">#FA283D</span>;
+    <span class="hljs-attribute">top</span>: -<span class="hljs-number">20px</span>;
+}
+<span class="hljs-selector-class">.taskText</span> {
+    <span class="hljs-attribute">fill</span>:white;
+    <span class="hljs-attribute">text-anchor</span>:middle;
+}
+<span class="hljs-selector-class">.taskTextOutsideRight</span> {
+    <span class="hljs-attribute">fill</span>:black;
+    <span class="hljs-attribute">text-anchor</span>:start;
+}
+<span class="hljs-selector-class">.taskTextOutsideLeft</span> {
+    <span class="hljs-attribute">fill</span>:black;
+    <span class="hljs-attribute">text-anchor</span>:end;
+}
 </code></pre>
 <h2 id="configuration">Configuration</h2>
 <p>Is it possible to adjust the margins for rendering the sequence diagram.</p>
-<p>This is done by defining the <strong>sequenceConfig</strong> part of the configuration object. Read more about it <a href="#configuration35">here</a>.
+<p>This is done by defining the <code>sequenceConfig</code> part of the configuration object. Read more about it <a href="#configuration35">here</a>.
 How to use the CLI is described in the <a href="#mermaid-cli8">mermaidCLI</a> page.</p>
-<p>mermaid.sequenceConfig can be set to a JSON string with config parameters or the corresponding object.</p>
-<pre><code>mermaid.ganttConfig = {
-    titleTopMargin:25,
-    barHeight:20,
-    barGap:4,
-    topPadding:75,
-    sidePadding:75
-    };
-</code></pre><h3 id="possible-configration-params">Possible configration params:</h3>
+<p>mermaid.ganttConfig can be set to a JSON string with config parameters or the corresponding object.</p>
+<pre><code class="lang-javascript">mermaid.ganttConfig = {
+    titleTopMargin:<span class="hljs-number">25</span>,
+    barHeight:<span class="hljs-number">20</span>,
+    barGap:<span class="hljs-number">4</span>,
+    topPadding:<span class="hljs-number">75</span>,
+    sidePadding:<span class="hljs-number">75</span>
+}
+</code></pre>
+<h3 id="possible-configration-params">Possible configration params:</h3>
 <table>
 <thead>
 <tr>
@@ -588,7 +558,7 @@ How to use the CLI is described in the <a href="#mermaid-cli8">mermaidCLI</a> pa
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Gantt diagram","order":4,"level":"1.5","depth":1,"next":{"title":"mermaid CLI","level":"1.6","depth":1,"path":"mermaidCLI.md","ref":"mermaidCLI.md","articles":[]},"previous":{"title":"Sequence diagram","level":"1.4","depth":1,"path":"sequenceDiagram.md","ref":"sequenceDiagram.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["addcssjs"],"pluginsConfig":{"addcssjs":{"css":["./styles/mermaid.forest.min.css"],"js":["./scripts/mermaid.min.js","./scripts/index.js"]},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"gantt.md","mtime":"2017-06-04T11:17:24.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-06T14:17:00.626Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Gantt diagram","level":"1.5","depth":1,"next":{"title":"mermaid CLI","level":"1.6","depth":1,"path":"mermaidCLI.md","ref":"mermaidCLI.md","articles":[]},"previous":{"title":"Sequence diagram","level":"1.4","depth":1,"path":"sequenceDiagram.md","ref":"sequenceDiagram.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["addcssjs"],"pluginsConfig":{"addcssjs":{"css":["./styles/mermaid.forest.min.css"],"js":["./scripts/mermaid.min.js","./scripts/index.js"]},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"gantt.md","mtime":"2017-06-08T09:21:27.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-08T09:46:09.158Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

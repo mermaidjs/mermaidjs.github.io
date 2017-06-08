@@ -64,7 +64,7 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="development.html" />
+    <link rel="next" href="mermaidAPI.html" />
     
     
     <link rel="prev" href="mermaidCLI.html" />
@@ -187,7 +187,20 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8" data-path="development.html">
+        <li class="chapter " data-level="1.8" data-path="mermaidAPI.html">
+            
+                <a href="mermaidAPI.html">
+            
+                    
+                    mermaidAPI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="development.html">
             
                 <a href="development.html">
             
@@ -200,7 +213,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.9" data-path="upgrading.html">
+        <li class="chapter " data-level="1.10" data-path="upgrading.html">
             
                 <a href="upgrading.html">
             
@@ -260,42 +273,14 @@
                                 
                                 <h1 id="demos">Demos</h1>
 <h2 id="basic-flowchart">Basic flowchart</h2>
-<pre><code>%% Example diagram
-graph LR
-    A[Square Rect] -- Link text --&gt; B((Circle))
-    A --&gt; C(Round Rect)
-    B --&gt; D{Rhombus}
-    C --&gt; D
-</code></pre><pre><code class="lang-mermaid">graph LR
+<pre><code class="lang-mermaid">graph LR
     A[Square Rect] -- Link text --&gt; B((Circle))
     A --&gt; C(Round Rect)
     B --&gt; D{Rhombus}
     C --&gt; D
 </code></pre>
 <h2 id="larger-flowchart-with-some-styling">Larger flowchart with some styling</h2>
-<pre><code>%% Code for flowchart below
-graph TB
-    sq[Square shape] --&gt; ci((Circle shape))
-
-    subgraph A subgraph
-        od&gt;Odd shape]-- Two line&amp;lt;br&gt;edge comment --&gt; ro
-        di{Diamond with &amp;lt;br/&gt; line break} -.-&gt; ro(Rounded&amp;lt;br&gt;square&amp;lt;br&gt;shape)
-        di==&gt;ro2(Rounded square shape)
-    end
-
-    %% Notice that no text in shape are added here instead that is appended further down
-    e --&gt; od3&gt;Really long text with linebreak&amp;lt;br&gt;in an Odd shape]
-
-    %% Comments after double percent signs
-    e((Inner / circle&amp;lt;br&gt;and some odd &amp;lt;br&gt;special characters)) --&gt; f(,.?!+-*&#x632;)
-
-    cyr[Cyrillic]--&gt;cyr2((Circle shape &#x41D;&#x430;&#x447;&#x430;&#x43B;&#x43E;));
-
-     classDef green fill:#9f6,stroke:#333,stroke-width:2px;
-     classDef orange fill:#f96,stroke:#333,stroke-width:4px;
-     class sq,e green
-     class di orange
-</code></pre><pre><code class="lang-mermaid">graph TB
+<pre><code class="lang-mermaid">graph TB
     sq[Square shape] --&gt; ci((Circle shape))
 
     subgraph A subgraph
@@ -318,17 +303,7 @@ graph TB
      class di orange
 </code></pre>
 <h2 id="basic-sequence-diagram">Basic sequence diagram</h2>
-<pre><code>%% Sequence diagram code
-sequenceDiagram
-    Alice -&gt;&gt; Bob: Hello Bob, how are you?
-    Bob--&gt;&gt;John: How about you John?
-    Bob--x Alice: I am good thanks!
-    Bob-x John: I am good thanks!
-    Note right of John: Bob thinks a long&amp;lt;br/&gt;long time, so long&amp;lt;br/&gt;that the text does&amp;lt;br/&gt;not fit on a row.
-
-    Bob--&gt;Alice: Checking with John...
-    Alice-&gt;John: Yes... John, how are you?
-</code></pre><pre><code class="lang-mermaid">sequenceDiagram
+<pre><code class="lang-mermaid">sequenceDiagram
     Alice-&gt;&gt; Bob: Hello Bob, how are you?
     Bob--&gt;&gt; John: How about you John?
     Bob--x Alice: I am good thanks!
@@ -340,21 +315,7 @@ sequenceDiagram
     Alice-&gt;John: Yes... John, how are you?
 </code></pre>
 <h2 id="loops-alt-and-opt">Loops, alt and opt</h2>
-<pre><code>%% Sequence diagram code
-sequenceDiagram
-    loop Daily query
-        Alice-&amp;gt;&amp;gt;Bob: Hello Bob, how are you?
-        alt is sick
-            Bob-&amp;gt;&amp;gt;Alice: Not so good :(
-        else is well
-            Bob-&amp;gt;&amp;gt;Alice: Feeling fresh like a daisy
-        end
-
-        opt Extra response
-            Bob-&amp;gt;&amp;gt;Alice: Thanks for asking
-        end
-    end
-</code></pre><pre><code class="lang-mermaid">sequenceDiagram
+<pre><code class="lang-mermaid">sequenceDiagram
     loop Daily query
         Alice-&gt;&gt;Bob: Hello Bob, how are you?
         alt is sick
@@ -369,19 +330,7 @@ sequenceDiagram
     end
 </code></pre>
 <h2 id="message-to-self-in-loop">Message to self in loop</h2>
-<pre><code>%% Sequence diagram code
-sequenceDiagram
-    participant Alice
-    participant Bob
-    Alice-&gt;&gt;John: Hello John, how are you?
-    loop Healthcheck
-        John-&gt;&gt;John: Fight against hypochondria
-    end
-    Note right of John: Rational thoughts&amp;lt;br/&gt;prevail...
-    John--&gt;&gt;Alice: Great!
-    John-&gt;&gt;Bob: How about you?
-    Bob--&gt;&gt;John: Jolly good!
-</code></pre><pre><code class="lang-mermaid">sequenceDiagram
+<pre><code class="lang-mermaid">sequenceDiagram
     participant Alice
     participant Bob
     Alice-&gt;&gt;John: Hello John, how are you?
@@ -425,7 +374,7 @@ sequenceDiagram
                 </a>
                 
                 
-                <a href="development.html" class="navigation navigation-next " aria-label="Next page: Development">
+                <a href="mermaidAPI.html" class="navigation navigation-next " aria-label="Next page: mermaidAPI">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -436,7 +385,7 @@ sequenceDiagram
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Demos","order":5,"level":"1.7","depth":1,"next":{"title":"Development","level":"1.8","depth":1,"path":"development.md","ref":"development.md","articles":[]},"previous":{"title":"mermaid CLI","level":"1.6","depth":1,"path":"mermaidCLI.md","ref":"mermaidCLI.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["addcssjs"],"pluginsConfig":{"addcssjs":{"css":["./styles/mermaid.forest.min.css"],"js":["./scripts/mermaid.min.js","./scripts/index.js"]},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"demos.md","mtime":"2017-06-04T11:17:24.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-06T14:17:00.626Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Demos","level":"1.7","depth":1,"next":{"title":"mermaidAPI","level":"1.8","depth":1,"path":"mermaidAPI.md","ref":"mermaidAPI.md","articles":[]},"previous":{"title":"mermaid CLI","level":"1.6","depth":1,"path":"mermaidCLI.md","ref":"mermaidCLI.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["addcssjs"],"pluginsConfig":{"addcssjs":{"css":["./styles/mermaid.forest.min.css"],"js":["./scripts/mermaid.min.js","./scripts/index.js"]},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"demos.md","mtime":"2017-06-08T09:30:10.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-08T09:46:09.158Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

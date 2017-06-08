@@ -187,7 +187,20 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8" data-path="development.html">
+        <li class="chapter " data-level="1.8" data-path="mermaidAPI.html">
+            
+                <a href="mermaidAPI.html">
+            
+                    
+                    mermaidAPI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="development.html">
             
                 <a href="development.html">
             
@@ -200,7 +213,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.9" data-path="upgrading.html">
+        <li class="chapter " data-level="1.10" data-path="upgrading.html">
             
                 <a href="upgrading.html">
             
@@ -429,16 +442,17 @@ should have a different look.</p>
 <pre><code>    class nodeId1,nodeId2 className;
 </code></pre><h3 id="css-classes">Css classes</h3>
 <p>It is also possible to pre dine classes in css styles that can be applied from the graph definition as in the example
-below:
-<strong>Example style</strong></p>
-<pre><code>&lt;style&gt;
-    .cssClass &gt; rect{
-        fill:#FF0000;
-        stroke:#FFFF00;
-        stroke-width:4px;
+below:</p>
+<p><strong>Example style</strong></p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css">
+    <span class="hljs-selector-class">.cssClass</span> &gt; <span class="hljs-selector-tag">rect</span>{
+        <span class="hljs-attribute">fill</span>:<span class="hljs-number">#FF0000</span>;
+        <span class="hljs-attribute">stroke</span>:<span class="hljs-number">#FFFF00</span>;
+        <span class="hljs-attribute">stroke-width</span>:<span class="hljs-number">4px</span>;
     }
-&lt;/style&gt;
-</code></pre><p><strong>Example definition</strong></p>
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+</code></pre>
+<p><strong>Example definition</strong></p>
 <pre><code>graph LR;
     A--&gt;B[AAA&lt;span&gt;BBB&lt;/span&gt;];
     B--&gt;D;
@@ -481,10 +495,11 @@ below:
 <p>This is done by defining <strong>mermaid.flowchartConfig</strong> or by the CLI to use a json file with the configuration. How to use
 the CLI is described in the mermaidCLI page.
 mermaid.flowchartConfig can be set to a JSON string with config parameters or the corresponding object.</p>
-<pre><code>mermaid.flowchartConfig = {
-    width: 100%
+<pre><code class="lang-javascript">mermaid.flowchartConfig = {
+    width: <span class="hljs-number">100</span>%
 }
 </code></pre>
+
                                 
                                 </section>
                             
@@ -527,7 +542,7 @@ mermaid.flowchartConfig can be set to a JSON string with config parameters or th
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"order":3,"title":"Flowchat","level":"1.3","depth":1,"next":{"title":"Sequence diagram","level":"1.4","depth":1,"path":"sequenceDiagram.md","ref":"sequenceDiagram.md","articles":[]},"previous":{"title":"Usage","level":"1.2","depth":1,"path":"usage.md","ref":"usage.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["addcssjs"],"pluginsConfig":{"addcssjs":{"css":["./styles/mermaid.forest.min.css"],"js":["./scripts/mermaid.min.js","./scripts/index.js"]},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"flowchart.md","mtime":"2017-06-06T14:13:48.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-06T14:17:00.626Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Flowchat","level":"1.3","depth":1,"next":{"title":"Sequence diagram","level":"1.4","depth":1,"path":"sequenceDiagram.md","ref":"sequenceDiagram.md","articles":[]},"previous":{"title":"Usage","level":"1.2","depth":1,"path":"usage.md","ref":"usage.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["addcssjs"],"pluginsConfig":{"addcssjs":{"css":["./styles/mermaid.forest.min.css"],"js":["./scripts/mermaid.min.js","./scripts/index.js"]},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"flowchart.md","mtime":"2017-06-08T08:57:32.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-08T09:46:09.158Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

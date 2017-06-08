@@ -67,7 +67,7 @@
     <link rel="next" href="upgrading.html" />
     
     
-    <link rel="prev" href="demos.html" />
+    <link rel="prev" href="mermaidAPI.html" />
     
 
     </head>
@@ -187,7 +187,20 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.8" data-path="development.html">
+        <li class="chapter " data-level="1.8" data-path="mermaidAPI.html">
+            
+                <a href="mermaidAPI.html">
+            
+                    
+                    mermaidAPI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.9" data-path="development.html">
             
                 <a href="development.html">
             
@@ -200,7 +213,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.9" data-path="upgrading.html">
+        <li class="chapter " data-level="1.10" data-path="upgrading.html">
             
                 <a href="upgrading.html">
             
@@ -267,8 +280,7 @@
 </ol>
 <h2 id="working-with-the-documentation">Working with the documentation</h2>
 <p>The html files are generated from the markdown files in the docs folder.</p>
-<p>Thus ... One important thing to remember. <em> Do not edit the html files directly! </em> Those changes will be overwritten
-when the site is re-generated.</p>
+<p>Thus ... One important thing to remember. <em> Do not edit the html files directly! </em> Those changes will be overwritten when the site is re-generated.</p>
 <p>There are some commands that are important in working with the documentation:</p>
 <pre><code>gulp site
 </code></pre><p>This command generates html files from the markdown files in the docs folder. If you do a small fix to a markdown file,
@@ -298,14 +310,14 @@ remember to run this command before submitting your changes as they will not be 
 <p><strong>Note:</strong> Make sure that the parseError function for the parser is defined and calling mermaidPAI.parseError this way a common way of detecting parse errors is provided for the end-user.</p>
 <p>For more info look in the example diagram type:</p>
 <p>The yy object has the following function:</p>
-<pre><code class="lang-javascript">exports.parseError = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err,hash</span>)</span>{
-   mermaidAPI.parseError(err,hash);
+<pre><code class="lang-javascript">exports.parseError = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err, hash</span>)</span>{
+   mermaidAPI.parseError(err, hash)
 };
 </code></pre>
 <p>when parsing the yy object is initialized as per below:</p>
-<pre><code class="lang-javascript">    <span class="hljs-keyword">var</span> parser;
-    parser = exampleParser.parser;
-    parser.yy = db;
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> parser
+parser = exampleParser.parser
+parser.yy = db
 </code></pre>
 <h3 id="step-2-rendering">Step 2: Rendering</h3>
 <p>Write a renderer that given the data found during parsing renders the diagram. To look at an example look at sequendeRenderer.js rather then the flowchart renderer as this is a more generic example.</p>
@@ -316,21 +328,25 @@ remember to run this command before submitting your changes as they will not be 
 <p>At this point when mermaid is trying to render the diagram, it will detect it as being of the new type but there will be no match when trying to render the diagram. To fix this add a new case in the switch statement in main.js:init this should match the diagram type returned from step number 2. The code in this new case statement should call the renderer for the diagram type with the data found by the parser as an argument.</p>
 <h2 id="usage-of-the-parser-as-a-separate-module">Usage of the parser as a separate module</h2>
 <h3 id="setup">Setup</h3>
-<pre><code>var graph = require(&apos;./graphDb&apos;);
-var flow = require(&apos;./parser/flow&apos;);
-flow.parser.yy = graph;
-</code></pre><h3 id="parsing">Parsing</h3>
-<pre><code>flow.parser.parse(text);
-</code></pre><h3 id="data-extraction">Data extraction</h3>
-<pre><code>// Javascript example
-graph.getDirection();
-graph.getVertices();
-graph.getEdges();
-</code></pre><p>The parser is also exposed in the mermaid api by calling:</p>
-<pre><code>var parser = mermaid.getParser();
-</code></pre><p>Note that the parse needs a graph object to store the data as per:</p>
-<pre><code>flow.parser.yy = graph;
-</code></pre><p>Look at graphDb.js for more details on that object.</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> graph = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;./graphDb&apos;</span>)
+<span class="hljs-keyword">var</span> flow = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;./parser/flow&apos;</span>)
+flow.parser.yy = graph
+</code></pre>
+<h3 id="parsing">Parsing</h3>
+<pre><code class="lang-javascript">flow.parser.parse(text)
+</code></pre>
+<h3 id="data-extraction">Data extraction</h3>
+<pre><code class="lang-javascript">graph.getDirection()
+graph.getVertices()
+graph.getEdges()
+</code></pre>
+<p>The parser is also exposed in the mermaid api by calling:</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> parser = mermaid.getParser()
+</code></pre>
+<p>Note that the parse needs a graph object to store the data as per:</p>
+<pre><code class="lang-javascript">flow.parser.yy = graph
+</code></pre>
+<p>Look at graphDb.js for more details on that object.</p>
 
                                 
                                 </section>
@@ -358,7 +374,7 @@ graph.getEdges();
 
             
                 
-                <a href="demos.html" class="navigation navigation-prev " aria-label="Previous page: Demos">
+                <a href="mermaidAPI.html" class="navigation navigation-prev " aria-label="Previous page: mermaidAPI">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
@@ -374,7 +390,7 @@ graph.getEdges();
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Development","order":9,"level":"1.8","depth":1,"next":{"title":"Upgrade from version -0.4.0","level":"1.9","depth":1,"path":"upgrading.md","ref":"upgrading.md","articles":[]},"previous":{"title":"Demos","level":"1.7","depth":1,"path":"demos.md","ref":"demos.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["addcssjs"],"pluginsConfig":{"addcssjs":{"css":["./styles/mermaid.forest.min.css"],"js":["./scripts/mermaid.min.js","./scripts/index.js"]},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"development.md","mtime":"2017-06-04T11:17:24.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-06T14:17:00.626Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Development","level":"1.9","depth":1,"next":{"title":"Upgrade from version -0.4.0","level":"1.10","depth":1,"path":"upgrading.md","ref":"upgrading.md","articles":[]},"previous":{"title":"mermaidAPI","level":"1.8","depth":1,"path":"mermaidAPI.md","ref":"mermaidAPI.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["addcssjs"],"pluginsConfig":{"addcssjs":{"css":["./styles/mermaid.forest.min.css"],"js":["./scripts/mermaid.min.js","./scripts/index.js"]},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"development.md","mtime":"2017-06-08T09:44:02.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-08T09:46:09.158Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
