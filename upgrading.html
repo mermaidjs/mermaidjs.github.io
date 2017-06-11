@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Upgrade from version -0.4.0 · GitBook</title>
+        <title>Upgrading · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -16,6 +16,10 @@
     <link rel="stylesheet" href="gitbook/style.css">
 
     
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-richquotes/plugin.css">
+                
             
                 
                 <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
@@ -216,7 +220,7 @@
                 <a href="upgrading.html">
             
                     
-                    Upgrade from version -0.4.0
+                    Upgrading
             
                 </a>
             
@@ -254,7 +258,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >Upgrade from version -0.4.0</a>
+        <a href="." >Upgrading</a>
     </h1>
 </div>
 
@@ -269,18 +273,19 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="upgrading-to-from-version--040">Upgrading to from version -0.4.0</h1>
+                                <h1 id="upgrading">Upgrading</h1>
 <p>Some of the interfaces has been upgraded.</p>
-<h2 id="initialization">Initialization</h2>
+<h2 id="from-version-040-to-050">From version 0.4.0 to 0.5.0</h2>
+<h3 id="initialization">Initialization</h3>
 <p><code>mermaid_config</code> is no longer used. Instead a call to mermaid initialize is done as in the example below:</p>
-<h3 id="version-040">version 0.4.0</h3>
+<h4 id="version-040">version 0.4.0</h4>
 <pre><code class="lang-javascript">mermaid_config = {
-    startOnLoad:<span class="hljs-literal">true</span>
+    startOnLoad: <span class="hljs-literal">true</span>
 }
 </code></pre>
-<h3 id="will-look-like-below-in-version-050">will look like below in version 0.5.0</h3>
+<h4 id="version-050">version 0.5.0</h4>
 <pre><code class="lang-javascript">mermaid.initialize({
-    startOnLoad:<span class="hljs-literal">true</span>
+    startOnLoad: <span class="hljs-literal">true</span>
 })
 </code></pre>
 
@@ -322,7 +327,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Upgrade from version -0.4.0","level":"1.10","depth":1,"previous":{"title":"Development","level":"1.9","depth":1,"path":"development.md","ref":"development.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["addcssjs"],"pluginsConfig":{"addcssjs":{"css":["./styles/mermaid.forest.min.css"],"js":["./scripts/mermaid.min.js","./scripts/index.js"]},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"upgrading.md","mtime":"2017-06-08T09:44:45.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-08T09:46:09.158Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Upgrading","level":"1.10","depth":1,"previous":{"title":"Development","level":"1.9","depth":1,"path":"development.md","ref":"development.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["addcssjs","richquotes"],"pluginsConfig":{"addcssjs":{"css":["./styles/mermaid.forest.min.css"],"js":["./scripts/mermaid.min.js","./scripts/index.js"]},"richquotes":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"upgrading.md","mtime":"2017-06-11T00:30:21.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-11T03:07:23.201Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

@@ -18,6 +18,10 @@
     
             
                 
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-richquotes/plugin.css">
+                
+            
+                
                 <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
                 
             
@@ -216,7 +220,7 @@
                 <a href="upgrading.html">
             
                     
-                    Upgrade from version -0.4.0
+                    Upgrading
             
                 </a>
             
@@ -297,7 +301,7 @@
     John-&gt;Bob: How about you?
     Bob--&gt;John: Jolly good!
 </code></pre>
-<h3 id="example-code-for-a-gantt-diagram">Example code for a gantt diagram</h3>
+<h3 id="an-example-of-a-gantt-diagram">An example of a gantt diagram</h3>
 <pre><code class="lang-mermaid">gantt
         dateFormat  YYYY-MM-DD
         title Adding GANTT diagram functionality to mermaid
@@ -314,7 +318,7 @@
         Create tests for renderer           :2d
         Add to mermaid                      :1d
 </code></pre>
-<p>Play with mermaid using this <a href="https://danielmschmidt.github.io/mermaid-demo/" target="_blank">editor</a> or this <a href="https://knsv.github.io/mermaid/live_editor/" target="_blank">live editor</a>.</p>
+<p>Play with mermaid using this <a href="https://knsv.github.io/mermaid/live_editor/" target="_blank">live editor</a>.</p>
 <h2 id="credits">Credits</h2>
 <p>Many thanks to the <a href="https://d3js.org/" target="_blank">d3</a> and <a href="https://github.com/cpettitt/dagre-d3" target="_blank">dagre-d3</a> projects for providing the graphical layout and drawing libraries!
 Thanks also to the <a href="https://bramp.github.io/js-sequence-diagrams" target="_blank">js-sequence-diagram</a> project for usage of the grammar for the sequence diagrams.</p>
@@ -323,16 +327,14 @@ Thanks also to the <a href="https://bramp.github.io/js-sequence-diagrams" target
 <h1 id="downstream-projects">Downstream projects</h1>
 <p>Mermaid is supported in a number of publishing systems and editors. Please report if a plugin/editor is missing from the list below:</p>
 <ul>
-<li>Support in LightPaper 1.2+. <a href="https://github.com/42Squares/LightPaper/blob/master/doc/Adding%20Mermaid%20Diagrams.md" target="_blank">Howto</a>. Discout with code MERMAID_25</li>
+<li><a href="https://mdp.tylingsoft.com/" target="_blank">Markdown Plus</a> - Markdown editor with extra features</li>
 <li><a href="https://github.com/JozoVilcek/gitbook-plugin-mermaid" target="_blank">gitbook-plugin</a></li>
-<li>light table</li>
 <li><a href="https://marketplace.atlassian.com/plugins/org.anvard.atlassian.mermaid-plugin/server/overview" target="_blank">Confluence plugin</a></li>
 <li><a href="http://nauvalatmaja.com/2015/01/13/rendering-mermaid-in-docpad/" target="_blank">Using mermaid via docpad</a></li>
 <li><a href="https://rubygems.org/gems/jekyll-mermaid/versions/1.0.0" target="_blank">Using mermaid in Jekyll</a></li>
 <li><a href="http://mostlyblather.com/blog/2015/05/23/mermaid-jekyll-octopress/" target="_blank">Using mermaid via Octopress</a></li>
 <li><a href="http://pad.haroopress.com/user.html" target="_blank">Mardown editor Haroopad</a></li>
 <li><a href="https://atom.io/packages/atom-mermaid" target="_blank">Plugin for atom</a></li>
-<li><a href="https://mdp.tylingsoft.com/" target="_blank">Markdown Plus</a></li>
 <li><a href="https://github.com/kannokanno/previm" target="_blank">Vim Plugin</a></li>
 <li><a href="https://github.com/mgaitan/sphinxcontrib-mermaid" target="_blank">Sphinx extension</a></li>
 <li><a href="https://github.com/raghur/mermaid-filter" target="_blank">Pandoc filter</a></li>
@@ -387,7 +389,7 @@ Thanks also to the <a href="https://bramp.github.io/js-sequence-diagrams" target
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"mermaid","level":"1.1","depth":1,"next":{"title":"Usage","level":"1.2","depth":1,"path":"usage.md","ref":"usage.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["addcssjs"],"pluginsConfig":{"addcssjs":{"css":["./styles/mermaid.forest.min.css"],"js":["./scripts/mermaid.min.js","./scripts/index.js"]},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README.md","mtime":"2017-06-08T08:57:01.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-08T09:46:09.158Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"mermaid","level":"1.1","depth":1,"next":{"title":"Usage","level":"1.2","depth":1,"path":"usage.md","ref":"usage.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["addcssjs","richquotes"],"pluginsConfig":{"addcssjs":{"css":["./styles/mermaid.forest.min.css"],"js":["./scripts/mermaid.min.js","./scripts/index.js"]},"richquotes":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README.md","mtime":"2017-06-11T02:38:57.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-11T03:07:23.201Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

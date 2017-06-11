@@ -18,6 +18,10 @@
     
             
                 
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-richquotes/plugin.css">
+                
+            
+                
                 <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
                 
             
@@ -218,7 +222,7 @@
                 <a href="upgrading.html">
             
                     
-                    Upgrade from version -0.4.0
+                    Upgrading
             
                 </a>
             
@@ -273,23 +277,9 @@
                                 
                                 <h1 id="development">Development</h1>
 <h2 id="updating-the-documentation">Updating the documentation</h2>
-<h2 id="getting-the-development-environment-up">Getting the development environment up</h2>
-<ol>
-<li>Fork the gh-pages branch in the the mermaid repository</li>
-<li>Do npm install</li>
-</ol>
-<h2 id="working-with-the-documentation">Working with the documentation</h2>
-<p>The html files are generated from the markdown files in the docs folder.</p>
-<p>Thus ... One important thing to remember. <em> Do not edit the html files directly! </em> Those changes will be overwritten when the site is re-generated.</p>
-<p>There are some commands that are important in working with the documentation:</p>
-<pre><code>gulp site
-</code></pre><p>This command generates html files from the markdown files in the docs folder. If you do a small fix to a markdown file,
-remember to run this command before submitting your changes as they will not be reflected in the html files if you don&apos;t.</p>
-<pre><code>gulp www
-</code></pre><p>This command starts a small mini express server for viewing the documentation site.</p>
-<h2 id="committing-the-changes">Committing the changes</h2>
-<p>Do a pull request to merge the changes to the site.</p>
-<h2 id="things-to-be-done-in-order-to-add-a-new-diagram-type">Things to be done in order to add a new diagram type</h2>
+<p>We write documention with GitBook.</p>
+<p>Please continue with the <a href="https://github.com/mermaidjs/mermaid-gitbook" target="_blank">mermaid-gitbook</a> project.</p>
+<h2 id="how-to-add-a-new-diagram-type">How to add a new diagram type</h2>
 <h3 id="step-1-grammar--parsing">Step 1: Grammar &amp; Parsing</h3>
 <h4 id="grammar">Grammar</h4>
 <p>This would be to define a jison grammar for the new diagram type. That should start with a way to identify that the text in the mermaid tag is a diagram of that type. Create a new folder under diagrams for your new diagram type and a parser folder in it. This leads us to step 2.</p>
@@ -307,14 +297,16 @@ remember to run this command before submitting your changes as they will not be 
     | &apos;title&apos; message      { yy.setTitle($2);  }
     ;
 </code></pre><p>In the extract of the grammar above, it is defined that a call to the setTitle method in the data object will be done when parsing and the title keyword is encountered.</p>
-<p><strong>Note:</strong> Make sure that the parseError function for the parser is defined and calling mermaidPAI.parseError this way a common way of detecting parse errors is provided for the end-user.</p>
+<blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-info"></strong>
+<p> Make sure that the <code>parseError</code> function for the parser is defined and calling <code>mermaidPAI.parseError</code>. This way a common way of detecting parse errors is provided for the end-user.</p>
+</blockquote>
 <p>For more info look in the example diagram type:</p>
-<p>The yy object has the following function:</p>
+<p>The <code>yy</code> object has the following function:</p>
 <pre><code class="lang-javascript">exports.parseError = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err, hash</span>)</span>{
    mermaidAPI.parseError(err, hash)
 };
 </code></pre>
-<p>when parsing the yy object is initialized as per below:</p>
+<p>when parsing the <code>yy</code> object is initialized as per below:</p>
 <pre><code class="lang-javascript"><span class="hljs-keyword">var</span> parser
 parser = exampleParser.parser
 parser.yy = db
@@ -325,7 +317,7 @@ parser.yy = db
 <h3 id="step-3-detection-of-the-new-diagram-type">Step 3: Detection of the new diagram type</h3>
 <p>The second thing to do is to add the capability to detect the new new diagram to type to the detectType in utils.js. The detection should return a key for the new diagram type.</p>
 <h3 id="step-4-the-final-piece---triggering-the-rendering">Step 4: The final piece - triggering the rendering</h3>
-<p>At this point when mermaid is trying to render the diagram, it will detect it as being of the new type but there will be no match when trying to render the diagram. To fix this add a new case in the switch statement in main.js:init this should match the diagram type returned from step number 2. The code in this new case statement should call the renderer for the diagram type with the data found by the parser as an argument.</p>
+<p>At this point when mermaid is trying to render the diagram, it will detect it as being of the new type but there will be no match when trying to render the diagram. To fix this add a new case in the switch statement in main.js:init this should match the diagram type returned from step #2. The code in this new case statement should call the renderer for the diagram type with the data found by the parser as an argument.</p>
 <h2 id="usage-of-the-parser-as-a-separate-module">Usage of the parser as a separate module</h2>
 <h3 id="setup">Setup</h3>
 <pre><code class="lang-javascript"><span class="hljs-keyword">var</span> graph = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;./graphDb&apos;</span>)
@@ -346,7 +338,7 @@ graph.getEdges()
 <p>Note that the parse needs a graph object to store the data as per:</p>
 <pre><code class="lang-javascript">flow.parser.yy = graph
 </code></pre>
-<p>Look at graphDb.js for more details on that object.</p>
+<p>Look at <code>graphDb.js</code> for more details on that object.</p>
 
                                 
                                 </section>
@@ -379,7 +371,7 @@ graph.getEdges()
                 </a>
                 
                 
-                <a href="upgrading.html" class="navigation navigation-next " aria-label="Next page: Upgrade from version -0.4.0">
+                <a href="upgrading.html" class="navigation navigation-next " aria-label="Next page: Upgrading">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -390,7 +382,7 @@ graph.getEdges()
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Development","level":"1.9","depth":1,"next":{"title":"Upgrade from version -0.4.0","level":"1.10","depth":1,"path":"upgrading.md","ref":"upgrading.md","articles":[]},"previous":{"title":"mermaidAPI","level":"1.8","depth":1,"path":"mermaidAPI.md","ref":"mermaidAPI.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["addcssjs"],"pluginsConfig":{"addcssjs":{"css":["./styles/mermaid.forest.min.css"],"js":["./scripts/mermaid.min.js","./scripts/index.js"]},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"development.md","mtime":"2017-06-08T09:44:02.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-08T09:46:09.158Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Development","level":"1.9","depth":1,"next":{"title":"Upgrading","level":"1.10","depth":1,"path":"upgrading.md","ref":"upgrading.md","articles":[]},"previous":{"title":"mermaidAPI","level":"1.8","depth":1,"path":"mermaidAPI.md","ref":"mermaidAPI.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["addcssjs","richquotes"],"pluginsConfig":{"addcssjs":{"css":["./styles/mermaid.forest.min.css"],"js":["./scripts/mermaid.min.js","./scripts/index.js"]},"richquotes":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"development.md","mtime":"2017-06-11T01:02:20.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-11T03:07:23.201Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

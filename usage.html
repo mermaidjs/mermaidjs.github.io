@@ -18,6 +18,10 @@
     
             
                 
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-richquotes/plugin.css">
+                
+            
+                
                 <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
                 
             
@@ -218,7 +222,7 @@
                 <a href="upgrading.html">
             
                     
-                    Upgrade from version -0.4.0
+                    Upgrading
             
                 </a>
             
@@ -273,28 +277,25 @@
                                 
                                 <h1 id="usage">Usage</h1>
 <h2 id="installation">Installation</h2>
-<p>Either use the npm or bower package managers as per below:</p>
-<pre><code>bower install mermaid --save-dev
-</code></pre><pre><code>npm install mermaid --save-dev
-</code></pre><p>Or download a javascript bundle and a stylesheet, e.g. the urls below are for the default style and the all-in-one javascript - note that #version# should be replaced with version of choice:</p>
-<pre><code>https://cdn.rawgit.com/knsv/mermaid/#version#/dist/mermaid.css
-https://cdn.rawgit.com/knsv/mermaid/#version#/dist/mermaid.min.js
+<h3 id="npm-package">npm package</h3>
+<pre><code>yarn add mermaid
+</code></pre><h3 id="cdn">CDN</h3>
+<p>Or download a javascript bundle and a stylesheet, e.g. the urls below are for the default style and the all-in-one javascript - note that #version# should be replaced with version of choice:</p>
+<pre><code>https://unpkg.com/mermaid@#version#/dist/mermaid.min.css
+https://unpkg.com/mermaid@#version#/dist/mermaid.min.js
 </code></pre><p>Ex:</p>
 <ul>
-<li><a href="https://cdn.rawgit.com/knsv/mermaid/6.0.0/dist/mermaid.min.js" target="_blank">js version 6.0.0</a></li>
+<li><a href="https://unpkg.com/mermaid@7.0.3/dist/mermaid.min.js" target="_blank">js version 7.0.3</a></li>
 </ul>
-<p>Checkout the <a href="https://github.com/knsv/mermaid/releases" target="_blank">latest version</a> and <a href="https://github.com/knsv/mermaid/tree/master/dist" target="_blank">other styles</a> such as <code>forest</code> and <code>dark</code>.</p>
+<p>Browser all the files:</p>
+<p><a href="https://unpkg.com/mermaid@7.0.3/dist/" target="_blank">https://unpkg.com/mermaid@7.0.3/dist/</a></p>
+<p>Please note that you can switch versions through the dropdown box on top right.</p>
 <p>There are some bundles to choose from:</p>
 <ul>
 <li>mermaid.js, mermaid.min.js This bundle contains all the javascript libraries you need to run mermaid</li>
 <li>mermaid.slim.js, mermaid.slim.min.js This bundle does not contain d3 which is useful for sites that already have d3 in place</li>
 <li>mermaidAPI.js, mermaidAPI.min.js, This bundle does not contain the web integration provided in the other packages but has a render function instead returns svg code.</li>
 </ul>
-<p><strong> Important: </strong></p>
-<blockquote>
-<p>It&apos;s best to use a specific tag or commit hash in the URL (not a branch). Files are cached permanently after the first request.</p>
-</blockquote>
-<p>Read more about that at <a href="https://rawgit.com/" target="_blank">https://rawgit.com/</a></p>
 <h2 id="simple-usage-on-a-web-page">Simple usage on a web page</h2>
 <p>The easiest way to integrate mermaid on a web page requires two elements:</p>
 <ol>
@@ -304,7 +305,7 @@ https://cdn.rawgit.com/knsv/mermaid/#version#/dist/mermaid.min.js
 <p>If these things are in place mermaid listens to the page load event and when fires, when the page has loaded, it will
 locate the graphs n the page and transform them to svg files.</p>
 <h3 id="include-mermaid-on-your-web-page">Include mermaid on your web page:</h3>
-<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;mermaid.css&quot;</span>&gt;</span>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;mermaid.min.css&quot;</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;mermaid.min.js&quot;</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="actionscript">mermaid.initialize({startOnLoad:<span class="hljs-literal">true</span>});</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
 </code></pre>
@@ -326,32 +327,19 @@ read the chart definiton which will be replaced with the svg chart.</p>
 <h3 id="simple-full-example">Simple full example:</h3>
 <pre><code class="lang-html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;en&quot;</span>&gt;</span>
-
 <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;utf-8&quot;</span>&gt;</span>
-  <span class="hljs-comment">&lt;!-- Downloaded as per http://knsv.github.io/mermaid/#installation --&gt;</span>
-  <span class="hljs-comment">&lt;!-- Stored in the same directory as html file                     --&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;mermaid.css&quot;</span>&gt;</span>
-
-  <span class="hljs-comment">&lt;!-- Optional to use fontawesome                                   --&gt;</span>
-  <span class="hljs-comment">&lt;!-- Downloaded as per http://fontawesome.io/get-started/          --&gt;</span>
-  <span class="hljs-comment">&lt;!-- Stored in the same directory as html file                     --&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://use.fontawesome.com/7065416dc9.js&quot;</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-
+  <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;mermaid.min.css&quot;</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
-
-  <span class="hljs-comment">&lt;!-- Include mermaid on your web page:                             --&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;mermaid.min.js&quot;</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="actionscript">mermaid.initialize({startOnLoad:<span class="hljs-literal">true</span>});</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-
   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;mermaid&quot;</span>&gt;</span>
   graph LR
       A --- B
       B--&gt;C[fa:fa-ban forbidden]
       B--&gt;D(fa:fa-spinner);
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-
+  <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;mermaid.min.js&quot;</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="actionscript">mermaid.initialize({startOnLoad:<span class="hljs-literal">true</span>});</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
 </code></pre>
@@ -388,9 +376,11 @@ finer-grained control of this behavior, you can call <code>init</code> yourself 
 <p>Or with no config object, and a jQuery selection:</p>
 <pre><code class="lang-javascript">mermaid.init(<span class="hljs-literal">undefined</span>, $(<span class="hljs-string">&quot;#someId .yetAnotherClass&quot;</span>));
 </code></pre>
-<aside class="warning">This type of integration is deprecated instead the preferred way of handling more complex integration is to us the mermaidAPI instead.</aside>
-
-
+<blockquote class="clearfix alert alert-warning"><strong class="fa fa-2x fa-exclamation-triangle"></strong>
+<p> This type of integration is deprecated instead the preferred way of handling more complex integration is to us the mermaidAPI instead.</p>
+</blockquote>
+<h2 id="usage-with-webpack">Usage with webpack</h2>
+<p>mermaid fully supports webpack. Here is an <a href="https://github.com/mermaidjs/mermaid-webpack-demo" target="_blank">working demo</a>.</p>
 <h2 id="usage-with-browserify">Usage with browserify</h2>
 <p>The reader is assumed to know about CommonJS style of module handling and how to use browserify. If not a good place
 to start would be <a href="http://browserify.org/" target="_blank">http://browserify.org/</a> website.</p>
@@ -431,7 +421,7 @@ could be used. The example just logs the resulting svg to the javascript console
         startOnLoad:<span class="hljs-literal">false</span>
     });
     $(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
-    <span class="hljs-comment">// Example of using the API</span>
+        <span class="hljs-comment">// Example of using the API</span>
         <span class="hljs-keyword">var</span> element = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&quot;#graphDiv&quot;</span>);
 
         <span class="hljs-keyword">var</span> insertSvg = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">svgCode, bindFunctions</span>)</span>{
@@ -447,8 +437,8 @@ could be used. The example just logs the resulting svg to the javascript console
 <pre><code class="lang-javascript">$ = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;jquery&apos;</span>);
 mermaidAPI = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;mermaid&apos;</span>).mermaidAPI;
 mermaidAPI.initialize({
-        startOnLoad:<span class="hljs-literal">false</span>
-    });
+    startOnLoad:<span class="hljs-literal">false</span>
+});
 
 $(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
     <span class="hljs-keyword">var</span> graphDefinition = <span class="hljs-string">&apos;graph TB\na--&gt;b&apos;</span>;
@@ -547,7 +537,7 @@ setting the options in mermaid.</p>
 <li>Instantiation of the configuration using the <strong>mermaid.init</strong> call</li>
 </ol>
 <p>The list above has two ways to many of doing this. Three are deprecated and will eventually be removed. The list of
-configuration objects are described <a href="http://knsv.github.io/mermaid/index.html#configuration28" target="_blank">in the mermaidAPI documentation</a>.</p>
+configuration objects are described <a href="mermaidAPI.html">in the mermaidAPI documentation</a>.</p>
 <h2 id="using-the-mermaidapiinitializemermaidinitialize-call">Using the <code>mermaidAPI.initialize</code>/<code>mermaid.initialize</code> call</h2>
 <p>The future proof way of setting the configuration is by using the initialization call to mermaid or mermaidAPi depending
 on what kind of integration you use.</p>
@@ -563,9 +553,9 @@ on what kind of integration you use.</p>
     mermaid.initialize(config);
 </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
 </code></pre>
-<aside class="success">This is the preferred way of configuring mermaid.</aside>
-
-
+<blockquote class="clearfix alert alert-success"><strong class="fa fa-2x fa-lightbulb-o"></strong>
+<p> This is the preferred way of configuring mermaid.</p>
+</blockquote>
 <h2 id="using-the-mermaid-object">Using the mermaid object</h2>
 <p>Is it possible to set some configuration via the mermaid object. The two parameters that are supported using this
 approach are:</p>
@@ -574,8 +564,9 @@ approach are:</p>
 <li>mermaid.htmlLabels</li>
 </ul>
 <pre><code>mermaid.startOnLoad = true;
-</code></pre><aside class="info">This way of setting the configuration is deprecated instead the preferred way of is to use the initialize method. This functionality is only kept for not breaking existing integrations</aside>
-
+</code></pre><blockquote class="clearfix alert alert-warning"><strong class="fa fa-2x fa-exclamation-triangle"></strong>
+<p> This way of setting the configuration is deprecated instead the preferred way of is to use the initialize method. This functionality is only kept for not breaking existing integrations</p>
+</blockquote>
 <h2 id="using-the-mermaidconfig">Using the mermaid_config</h2>
 <p>Is it possible to set some configuration via the mermaid object. The two parameters that are supported using this
 approach are:</p>
@@ -585,8 +576,9 @@ approach are:</p>
 </ul>
 <pre><code class="lang-javascript">mermaid_config.startOnLoad = <span class="hljs-literal">true</span>;
 </code></pre>
-<aside class="info">This way of setting the configuration is deprecated instead the preferred way of is to use the initialize method. This functionality is only kept for not breaking existing integrations</aside>
-
+<blockquote class="clearfix alert alert-warning"><strong class="fa fa-2x fa-exclamation-triangle"></strong>
+<p> This way of setting the configuration is deprecated instead the preferred way of is to use the initialize method. This functionality is only kept for not breaking existing integrations</p>
+</blockquote>
 <h2 id="using-the-mermaidinit-call">Using the mermaid.init call</h2>
 <p>Is it possible to set some configuration via the mermaid object. The two parameters that are supported using this
 approach are:</p>
@@ -595,7 +587,9 @@ approach are:</p>
 <li>mermaid_config.htmlLabels</li>
 </ul>
 <pre><code>mermaid_config.startOnLoad = true;
-</code></pre><aside class="info">This way of setting the configuration is deprecated instead the preferred way of is to use the initialize method. This functionality is only kept for not breaking existing integrations</aside>
+</code></pre><blockquote class="clearfix alert alert-warning"><strong class="fa fa-2x fa-exclamation-triangle"></strong>
+<p> This way of setting the configuration is deprecated instead the preferred way of is to use the initialize method. This functionality is only kept for not breaking existing integrations</p>
+</blockquote>
 
                                 
                                 </section>
@@ -639,7 +633,7 @@ approach are:</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Usage","level":"1.2","depth":1,"next":{"title":"Flowchat","level":"1.3","depth":1,"path":"flowchart.md","ref":"flowchart.md","articles":[]},"previous":{"title":"mermaid","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["addcssjs"],"pluginsConfig":{"addcssjs":{"css":["./styles/mermaid.forest.min.css"],"js":["./scripts/mermaid.min.js","./scripts/index.js"]},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"usage.md","mtime":"2017-06-08T08:57:12.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-08T09:46:09.158Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Usage","level":"1.2","depth":1,"next":{"title":"Flowchat","level":"1.3","depth":1,"path":"flowchart.md","ref":"flowchart.md","articles":[]},"previous":{"title":"mermaid","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["addcssjs","richquotes"],"pluginsConfig":{"addcssjs":{"css":["./styles/mermaid.forest.min.css"],"js":["./scripts/mermaid.min.js","./scripts/index.js"]},"richquotes":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"usage.md","mtime":"2017-06-10T14:19:59.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-11T03:07:23.201Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

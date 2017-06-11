@@ -18,6 +18,10 @@
     
             
                 
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-richquotes/plugin.css">
+                
+            
+                
                 <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
                 
             
@@ -218,7 +222,7 @@
                 <a href="upgrading.html">
             
                     
-                    Upgrade from version -0.4.0
+                    Upgrading
             
                 </a>
             
@@ -272,6 +276,17 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="demos">Demos</h1>
+<h2 id="basic-sequence-diagram">Basic sequence diagram</h2>
+<pre><code class="lang-mermaid">sequenceDiagram
+    Alice -&gt;&gt; Bob: Hello Bob, how are you?
+    Bob--&gt;&gt;John: How about you John?
+    Bob--x Alice: I am good thanks!
+    Bob-x John: I am good thanks!
+    Note right of John: Bob thinks a long&lt;br/&gt;long time, so long&lt;br/&gt;that the text does&lt;br/&gt;not fit on a row.
+
+    Bob--&gt;Alice: Checking with John...
+    Alice-&gt;John: Yes... John, how are you?
+</code></pre>
 <h2 id="basic-flowchart">Basic flowchart</h2>
 <pre><code class="lang-mermaid">graph LR
     A[Square Rect] -- Link text --&gt; B((Circle))
@@ -284,8 +299,8 @@
     sq[Square shape] --&gt; ci((Circle shape))
 
     subgraph A subgraph
-        od&gt;Odd shape]-- Two line&amp;lt;br&gt;edge comment --&gt; ro
-        di{Diamond with &amp;lt;br/&gt; line break} -.-&gt; ro(Rounded&amp;lt;br&gt;square&amp;lt;br&gt;shape)
+        od&gt;Odd shape]-- Two line&lt;br/&gt;edge comment --&gt; ro
+        di{Diamond with &lt;br/&gt; line break} -.-&gt; ro(Rounded&lt;br&gt;square&lt;br&gt;shape)
         di==&gt;ro2(Rounded square shape)
     end
 
@@ -301,18 +316,6 @@
      classDef orange fill:#f96,stroke:#333,stroke-width:4px;
      class sq,e green
      class di orange
-</code></pre>
-<h2 id="basic-sequence-diagram">Basic sequence diagram</h2>
-<pre><code class="lang-mermaid">sequenceDiagram
-    Alice-&gt;&gt; Bob: Hello Bob, how are you?
-    Bob--&gt;&gt; John: How about you John?
-    Bob--x Alice: I am good thanks!
-    Bob-x John: I am good thanks!
-
-    Note right of John: Bob thinks a long&lt;br/&gt;long time, so long&lt;br/&gt;that the text does&lt;br/&gt;not fit on a row.
-
-    Bob--&gt;Alice: Checking with John...
-    Alice-&gt;John: Yes... John, how are you?
 </code></pre>
 <h2 id="loops-alt-and-opt">Loops, alt and opt</h2>
 <pre><code class="lang-mermaid">sequenceDiagram
@@ -385,7 +388,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Demos","level":"1.7","depth":1,"next":{"title":"mermaidAPI","level":"1.8","depth":1,"path":"mermaidAPI.md","ref":"mermaidAPI.md","articles":[]},"previous":{"title":"mermaid CLI","level":"1.6","depth":1,"path":"mermaidCLI.md","ref":"mermaidCLI.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["addcssjs"],"pluginsConfig":{"addcssjs":{"css":["./styles/mermaid.forest.min.css"],"js":["./scripts/mermaid.min.js","./scripts/index.js"]},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"demos.md","mtime":"2017-06-08T09:30:10.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-08T09:46:09.158Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Demos","level":"1.7","depth":1,"next":{"title":"mermaidAPI","level":"1.8","depth":1,"path":"mermaidAPI.md","ref":"mermaidAPI.md","articles":[]},"previous":{"title":"mermaid CLI","level":"1.6","depth":1,"path":"mermaidCLI.md","ref":"mermaidCLI.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["addcssjs","richquotes"],"pluginsConfig":{"addcssjs":{"css":["./styles/mermaid.forest.min.css"],"js":["./scripts/mermaid.min.js","./scripts/index.js"]},"richquotes":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"demos.md","mtime":"2017-06-11T02:48:04.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-11T03:07:23.201Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
