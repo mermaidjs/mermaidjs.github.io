@@ -280,22 +280,8 @@
 <h3 id="npm-package">npm package</h3>
 <pre><code>yarn add mermaid
 </code></pre><h3 id="cdn">CDN</h3>
-<p>Or download a javascript bundle and a stylesheet, e.g. the urls below are for the default style and the all-in-one javascript - note that #version# should be replaced with version of choice:</p>
-<pre><code>https://unpkg.com/mermaid@#version#/dist/mermaid.min.css
-https://unpkg.com/mermaid@#version#/dist/mermaid.min.js
-</code></pre><p>Ex:</p>
-<ul>
-<li><a href="https://unpkg.com/mermaid@7.0.3/dist/mermaid.min.js" target="_blank">js version 7.0.3</a></li>
-</ul>
-<p>Browser all the files:</p>
-<p><a href="https://unpkg.com/mermaid@7.0.3/dist/" target="_blank">https://unpkg.com/mermaid@7.0.3/dist/</a></p>
+<p><a href="https://unpkg.com/mermaid/" target="_blank">https://unpkg.com/mermaid/</a></p>
 <p>Please note that you can switch versions through the dropdown box on top right.</p>
-<p>There are some bundles to choose from:</p>
-<ul>
-<li>mermaid.js, mermaid.min.js This bundle contains all the javascript libraries you need to run mermaid</li>
-<li>mermaid.slim.js, mermaid.slim.min.js This bundle does not contain d3 which is useful for sites that already have d3 in place</li>
-<li>mermaidAPI.js, mermaidAPI.min.js, This bundle does not contain the web integration provided in the other packages but has a render function instead returns svg code.</li>
-</ul>
 <h2 id="simple-usage-on-a-web-page">Simple usage on a web page</h2>
 <p>The easiest way to integrate mermaid on a web page requires two elements:</p>
 <ol>
@@ -305,8 +291,7 @@ https://unpkg.com/mermaid@#version#/dist/mermaid.min.js
 <p>If these things are in place mermaid listens to the page load event and when fires, when the page has loaded, it will
 locate the graphs n the page and transform them to svg files.</p>
 <h3 id="include-mermaid-on-your-web-page">Include mermaid on your web page:</h3>
-<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;mermaid.min.css&quot;</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;mermaid.min.js&quot;</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;mermaid.min.js&quot;</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="actionscript">mermaid.initialize({startOnLoad:<span class="hljs-literal">true</span>});</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
 </code></pre>
 <p>Further down on your page mermaid will look for tags with <code>class=&quot;mermaid&quot;</code>. From these tags mermaid will try to
@@ -380,34 +365,7 @@ finer-grained control of this behavior, you can call <code>init</code> yourself 
 <p> This type of integration is deprecated instead the preferred way of handling more complex integration is to us the mermaidAPI instead.</p>
 </blockquote>
 <h2 id="usage-with-webpack">Usage with webpack</h2>
-<p>mermaid fully supports webpack. Here is an <a href="https://github.com/mermaidjs/mermaid-webpack-demo" target="_blank">working demo</a>.</p>
-<h2 id="usage-with-browserify">Usage with browserify</h2>
-<p>The reader is assumed to know about CommonJS style of module handling and how to use browserify. If not a good place
-to start would be <a href="http://browserify.org/" target="_blank">http://browserify.org/</a> website.</p>
-<p>Minimalistic javascript:</p>
-<pre><code class="lang-javascript">mermaid = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;mermaid&apos;</span>)
-<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;Test page! mermaid version&apos;</span> + mermaid.version())
-</code></pre>
-<p>Bundle the javascript with browserify.</p>
-<p>Us the created bundle on a web page as per example below:</p>
-<pre><code class="lang-html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;mermaid.css&quot;</span> /&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;bundle.js&quot;</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;mermaid&quot;</span>&gt;</span>
-        graph LR
-            A--&gt;B
-            B--&gt;C
-            C--&gt;A
-            D--&gt;C
-    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
-</code></pre>
+<p>mermaid fully supports webpack. Here is a <a href="https://github.com/mermaidjs/mermaid-webpack-demo" target="_blank">working demo</a>.</p>
 <h2 id="api-usage">API usage</h2>
 <p>The main idea with the API is to be able to call a render function with graph defintion as a string. The render function
 will render the graph and call a callback with the resulting svg code. With this approach it is up to the site creator to
@@ -432,21 +390,6 @@ could be used. The example just logs the resulting svg to the javascript console
         <span class="hljs-keyword">var</span> graph = mermaidAPI.render(<span class="hljs-string">&apos;graphDiv&apos;</span>, graphDefinition, insertSvg);
     });
 </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-</code></pre>
-<h2 id="sample-of-api-usage-together-with-browserify">Sample of API usage together with browserify</h2>
-<pre><code class="lang-javascript">$ = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;jquery&apos;</span>);
-mermaidAPI = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;mermaid&apos;</span>).mermaidAPI;
-mermaidAPI.initialize({
-    startOnLoad:<span class="hljs-literal">false</span>
-});
-
-$(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
-    <span class="hljs-keyword">var</span> graphDefinition = <span class="hljs-string">&apos;graph TB\na--&gt;b&apos;</span>;
-    <span class="hljs-keyword">var</span> cb = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">html</span>)</span>{
-        <span class="hljs-built_in">console</span>.log(html);
-    }
-    mermaidAPI.render(<span class="hljs-string">&apos;id1&apos;</span>,graphDefinition,cb);
-});
 </code></pre>
 <h3 id="binding-events">Binding events</h3>
 <p>Sometimes the generated graph also has defined interactions like tooltip and click events. When using the API one must
@@ -633,7 +576,7 @@ approach are:</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Usage","level":"1.2","depth":1,"next":{"title":"Flowchart","level":"1.3","depth":1,"path":"flowchart.md","ref":"flowchart.md","articles":[]},"previous":{"title":"mermaid","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["addcssjs","richquotes"],"pluginsConfig":{"addcssjs":{"css":["./styles/mermaid.forest.min.css"],"js":["./scripts/mermaid.min.js","./scripts/index.js"]},"richquotes":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"usage.md","mtime":"2017-06-10T14:19:59.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-09-07T01:16:50.161Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Usage","level":"1.2","depth":1,"next":{"title":"Flowchart","level":"1.3","depth":1,"path":"flowchart.md","ref":"flowchart.md","articles":[]},"previous":{"title":"mermaid","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["addcssjs","richquotes"],"pluginsConfig":{"addcssjs":{"css":["./styles/mermaid.forest.min.css"],"js":["./scripts/mermaid.min.js","./scripts/index.js"]},"richquotes":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"usage.md","mtime":"2017-09-14T11:15:20.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-09-14T11:20:35.518Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
