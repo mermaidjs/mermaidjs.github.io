@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>mermaidAPI · GitBook</title>
+        <title>FAQ · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -68,10 +68,10 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="development.html" />
+    <link rel="next" href="usage.html" />
     
     
-    <link rel="prev" href="demos.html" />
+    <link rel="prev" href="./" />
     
 
     </head>
@@ -113,7 +113,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2" data-path="faq.html">
+        <li class="chapter active" data-level="1.2" data-path="faq.html">
             
                 <a href="faq.html">
             
@@ -204,7 +204,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.9" data-path="mermaidAPI.html">
+        <li class="chapter " data-level="1.9" data-path="mermaidAPI.html">
             
                 <a href="mermaidAPI.html">
             
@@ -286,7 +286,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >mermaidAPI</a>
+        <a href="." >FAQ</a>
     </h1>
 </div>
 
@@ -301,78 +301,12 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="mermaidapi">mermaidAPI</h1>
-<blockquote class="clearfix alert alert-warning"><strong class="fa fa-2x fa-exclamation-triangle"></strong>
-<p> This file is generated automatically from the comments of <a href="https://github.com/knsv/mermaid/blob/master/src/mermaidAPI.js" target="_blank">mermaidAPI.js</a> file. Please read that file <strong>instead</strong> for up-to-date information.</p>
-</blockquote>
-<p>This is the api to be used when handling the integration with the web page instead of using the default integration (mermaid.js).</p>
-<p>The core of this api is the <strong>render</strong> function that given a graph definitionas text renders the graph/diagram and returns a svg element for the graph. It is is then up to the user of the API to make use of the svg, either insert it somewhere in the page or something completely different.</p>
-<h2 id="configuration">Configuration</h2>
-<p>These are the default options which can be overridden with the initialization call as in the example below:</p>
-<pre><code class="lang-javascript">mermaid.initialize({
-  flowchart:{
-     htmlLabels: <span class="hljs-literal">false</span>
-  }
-});
-</code></pre>
-<h2 id="loglevel">logLevel</h2>
-<p>Decides the amount of logging to be used.</p>
-<ul>
-<li>debug: 1</li>
-<li>info: 2</li>
-<li>warn: 3</li>
-<li>error: 4</li>
-<li>fatal: 5</li>
-</ul>
-<p><strong>cloneCssStyles</strong> - This options controls whether or not the css rules should be copied into the generated svg startOnLoad - This options controls whether or mermaid starts when the page loads
-<strong>arrowMarkerAbsolute</strong> - This options controls whether or arrow markers in html code will be absolute paths or an anchor, #. This matters if you are using base tag settings.</p>
-<h2 id="flowchart">flowchart</h2>
-<p>The object containing configurations specific for flowcharts
-<strong>htmlLabels</strong> - Flag for setting whether or not a html tag should be used for rendering labels on the edges
-<strong>useMaxWidth</strong> - Flag for setting whether or not a all available width should be used for the diagram.</p>
-<h2 id="sequencediagram">sequenceDiagram</h2>
-<p>The object containing configurations specific for sequence diagrams</p>
-<p><strong>diagramMarginX</strong> - margin to the right and left of the sequence diagram
-<strong>diagramMarginY</strong> - margin to the over and under the sequence diagram
-<strong>actorMargin</strong> - Margin between actors
-<strong>width</strong> - Width of actor boxes
-<strong>height</strong> - Height of actor boxes
-<strong>boxMargin</strong> - Margin around loop boxes
-<strong>boxTextMargin</strong> - margin around the text in loop/alt/opt boxes
-<strong>noteMargin</strong> - margin around notes
-<strong>messageMargin</strong> - Space between messages
-<strong>mirrorActors</strong> - mirror actors under diagram
-<strong>bottomMarginAdj</strong> - Depending on css styling this might need adjustment. Prolongs the edge of the diagram downwards
-<strong>useMaxWidth</strong> - when this flag is set the height and width is set to 100% and is then scaling with the available space if not the absolute space required is used</p>
-<h2 id="gantt">gantt</h2>
-<p>The object containing configurations specific for gantt diagrams</p>
-<p><strong>titleTopMargin</strong> - margin top for the text over the gantt diagram
-<strong>barHeight</strong> - the height of the bars in the graph
-<strong>barGap</strong> - the margin between the different activities in the gantt diagram
-<strong>topPadding</strong> - margin between title and gantt diagram and between axis and gantt diagram.
-<strong>leftPadding</strong> - the space allocated for the section name to the left of the activities.
-<strong>gridLineStartPadding</strong> - Vertical starting position of the grid lines
-<strong>fontSize</strong> - font size ...
-<strong>fontFamily</strong> - font family ...
-<strong>numberSectionStyles</strong> - the number of alternating section styles
-<strong>axisFormatter</strong> - formatting of the axis, this might need adjustment to match your locale and preferences</p>
-<h2 id="parse">parse</h2>
-<p>Function that parses a mermaid diagram definition. If parsing fails the parseError callback is called and an error is thrown.</p>
-<h2 id="version">version</h2>
-<p>Function returning version information</p>
-<h2 id="render">render</h2>
-<p>Function that renders a svg with a graph from a chart definition. Usage example below:</p>
-<pre><code class="lang-javascript">mermaidAPI.initialize({
-    startOnLoad: <span class="hljs-literal">true</span>
-})
-$(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
-    <span class="hljs-keyword">var</span> graphDefinition = <span class="hljs-string">&apos;graph TB\na--&gt;b&apos;</span>
-    <span class="hljs-keyword">var</span> cb = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">svgGraph</span>) </span>{
-        <span class="hljs-built_in">console</span>.log(svgGraph)
-    }
-    mermaidAPI.render(<span class="hljs-string">&apos;id1&apos;</span>,graphDefinition,cb)
-})
-</code></pre>
+                                <ol>
+<li><a href="https://github.com/knsv/mermaid/issues/556#issuecomment-363182217" target="_blank">How to add title to flowchart?</a></li>
+<li><a href="https://github.com/mermaidjs/mermaid.cli/pull/24#issuecomment-373402785" target="_blank">How to specify custom CSS file?</a></li>
+<li><a href="https://github.com/knsv/mermaid/issues/542#issuecomment-3343564621" target="_blank">How to fix tooltip misplacement issue?</a></li>
+<li><a href="https://github.com/knsv/mermaid/issues/269#issuecomment-373229136" target="_blank">How to specify gantt diagram xAxis format?</a></li>
+</ol>
 
                                 
                                 </section>
@@ -400,12 +334,12 @@ $(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span c
 
             
                 
-                <a href="demos.html" class="navigation navigation-prev " aria-label="Previous page: Demos">
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: mermaid">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="development.html" class="navigation navigation-next " aria-label="Next page: Development">
+                <a href="usage.html" class="navigation navigation-next " aria-label="Next page: Usage">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -416,7 +350,7 @@ $(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span c
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"mermaidAPI","level":"1.9","depth":1,"next":{"title":"Development","level":"1.10","depth":1,"path":"development.md","ref":"development.md","articles":[]},"previous":{"title":"Demos","level":"1.8","depth":1,"path":"demos.md","ref":"demos.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["addcssjs","richquotes"],"pluginsConfig":{"addcssjs":{"css":["./styles/mermaid.forest.min.css"],"js":["./scripts/mermaid.min.js","./scripts/index.js"]},"richquotes":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"mermaidAPI.md","mtime":"2017-06-11T01:00:08.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-03-17T04:15:32.981Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"FAQ","level":"1.2","depth":1,"next":{"title":"Usage","level":"1.3","depth":1,"path":"usage.md","ref":"usage.md","articles":[]},"previous":{"title":"mermaid","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["addcssjs","richquotes"],"pluginsConfig":{"addcssjs":{"css":["./styles/mermaid.forest.min.css"],"js":["./scripts/mermaid.min.js","./scripts/index.js"]},"richquotes":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"faq.md","mtime":"2018-03-17T04:14:08.456Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-03-17T04:15:32.981Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
