@@ -1,0 +1,659 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Usage · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-richquotes/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="flowchart.html" />
+    
+    
+    <link rel="prev" href="breakingChanges.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    mermaid
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="faq.html">
+            
+                <a href="faq.html">
+            
+                    
+                    FAQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="breakingChanges.html">
+            
+                <a href="breakingChanges.html">
+            
+                    
+                    Breaking changes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4" data-path="usage.html">
+            
+                <a href="usage.html">
+            
+                    
+                    Usage
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="flowchart.html">
+            
+                <a href="flowchart.html">
+            
+                    
+                    Flowchart
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="sequenceDiagram.html">
+            
+                <a href="sequenceDiagram.html">
+            
+                    
+                    Sequence diagram
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="gantt.html">
+            
+                <a href="gantt.html">
+            
+                    
+                    Gantt diagram
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="mermaidCLI.html">
+            
+                <a href="mermaidCLI.html">
+            
+                    
+                    mermaid CLI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="demos.html">
+            
+                <a href="demos.html">
+            
+                    
+                    Demos
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="mermaidAPI.html">
+            
+                <a href="mermaidAPI.html">
+            
+                    
+                    mermaidAPI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="development.html">
+            
+                <a href="development.html">
+            
+                    
+                    Development
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="upgrading.html">
+            
+                <a href="upgrading.html">
+            
+                    
+                    Upgrading
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" >
+            
+                <a target="_blank" href="https://github.com/mermaidjs/mermaid-gitbook">
+            
+                    
+                    Contribute to this website
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Usage</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="usage">Usage</h1>
+<h2 id="installation">Installation</h2>
+<h3 id="npm-package">npm package</h3>
+<pre><code>yarn add mermaid
+</code></pre><h3 id="cdn">CDN</h3>
+<p><a href="https://unpkg.com/mermaid/" target="_blank">https://unpkg.com/mermaid/</a></p>
+<p>Please note that you can switch versions through the dropdown box on top right.</p>
+<h2 id="simple-usage-on-a-web-page">Simple usage on a web page</h2>
+<p>The easiest way to integrate mermaid on a web page requires two elements:</p>
+<ol>
+<li>Inclusion of the mermaid framework in the html page using a script tag</li>
+<li>A graph definition on the web page</li>
+</ol>
+<p>If these things are in place mermaid listens to the page load event and when fires, when the page has loaded, it will
+locate the graphs n the page and transform them to svg files.</p>
+<h3 id="include-mermaid-on-your-web-page">Include mermaid on your web page:</h3>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;mermaid.min.js&quot;</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="actionscript">mermaid.initialize({startOnLoad:<span class="hljs-literal">true</span>});</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+<p>Further down on your page mermaid will look for tags with <code>class=&quot;mermaid&quot;</code>. From these tags mermaid will try to
+read the chart definiton which will be replaced with the svg chart.</p>
+<h3 id="define-a-chart-like-this">Define a chart like this:</h3>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;mermaid&quot;</span>&gt;</span>
+    CHART DEFINITION GOES HERE
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<p>Would end up like this:</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;mermaid&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;mermaidChart0&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">svg</span>&gt;</span>
+        Chart ends up here
+    <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<p>An id is also added to mermaid tags without id.</p>
+<h3 id="simple-full-example">Simple full example:</h3>
+<pre><code class="lang-html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;en&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;utf-8&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;mermaid.min.css&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;mermaid&quot;</span>&gt;</span>
+  graph LR
+      A --- B
+      B--&gt;C[fa:fa-ban forbidden]
+      B--&gt;D(fa:fa-spinner);
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;mermaid.min.js&quot;</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="actionscript">mermaid.initialize({startOnLoad:<span class="hljs-literal">true</span>});</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+<h3 id="labels-out-of-bounds">Labels out of bounds</h3>
+<p>If you use dynamically loaded fonts that are loaded through CSS, such as Google fonts, mermaid should wait for the
+whole page to have been loaded (dom + assets, particularly the fonts file).</p>
+<pre><code class="lang-javascript">$(<span class="hljs-built_in">document</span>).load(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    mermaid.initialize();
+});
+</code></pre>
+<p>or</p>
+<pre><code class="lang-javascript">$(<span class="hljs-built_in">document</span>).ready(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    mermaid.initialize();
+});
+</code></pre>
+<p>Not doing so will most likely result in mermaid rendering graphs that have labels out of bounds. The default integration
+in mermaid uses the window.load event to start rendering.</p>
+<h3 id="calling-mermaidinit">Calling <code>mermaid.init</code></h3>
+<p>By default, <code>mermaid.init</code> will be called when the document is ready, finding all elements with
+<code>class=&quot;mermaid&quot;</code>. If you are adding content after mermaid is loaded, or otherwise need
+finer-grained control of this behavior, you can call <code>init</code> yourself with:</p>
+<ul>
+<li>a configuration object</li>
+<li>some nodes, as<ul>
+<li>a node</li>
+<li>an a array-like of nodes</li>
+<li>or W3C selector that will find your nodes</li>
+</ul>
+</li>
+</ul>
+<p>Example:</p>
+<pre><code class="lang-javascript">mermaid.init({noteMargin: <span class="hljs-number">10</span>}, <span class="hljs-string">&quot;.someOtherClass&quot;</span>);
+</code></pre>
+<p>Or with no config object, and a jQuery selection:</p>
+<pre><code class="lang-javascript">mermaid.init(<span class="hljs-literal">undefined</span>, $(<span class="hljs-string">&quot;#someId .yetAnotherClass&quot;</span>));
+</code></pre>
+<blockquote class="clearfix alert alert-warning"><strong class="fa fa-2x fa-exclamation-triangle"></strong>
+<p> This type of integration is deprecated instead the preferred way of handling more complex integration is to us the mermaidAPI instead.</p>
+</blockquote>
+<h2 id="usage-with-webpack">Usage with webpack</h2>
+<p>mermaid fully supports webpack. Here is a <a href="https://github.com/mermaidjs/mermaid-webpack-demo" target="_blank">working demo</a>.</p>
+<h2 id="api-usage">API usage</h2>
+<p>The main idea with the API is to be able to call a render function with graph defintion as a string. The render function
+will render the graph and call a callback with the resulting svg code. With this approach it is up to the site creator to
+fetch the graph definition from the site, perhaps from a textarea, render it and place the graph somewhere in the site.</p>
+<p>To do this, include mermaidAPI on your web website instead of mermaid.js. The example below show an outline of how this
+could be used. The example just logs the resulting svg to the javascript console.</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;mermaidAPI.js&quot;</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+    mermaidAPI.initialize({
+        startOnLoad:<span class="hljs-literal">false</span>
+    });
+    $(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+        <span class="hljs-comment">// Example of using the API</span>
+        <span class="hljs-keyword">var</span> element = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&quot;#graphDiv&quot;</span>);
+
+        <span class="hljs-keyword">var</span> insertSvg = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">svgCode, bindFunctions</span>)</span>{
+            element.innerHTML = svgCode;
+        };
+
+        <span class="hljs-keyword">var</span> graphDefinition = <span class="hljs-string">&apos;graph TB\na--&gt;b&apos;</span>;
+        <span class="hljs-keyword">var</span> graph = mermaidAPI.render(<span class="hljs-string">&apos;graphDiv&apos;</span>, graphDefinition, insertSvg);
+    });
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+<h3 id="binding-events">Binding events</h3>
+<p>Sometimes the generated graph also has defined interactions like tooltip and click events. When using the API one must
+add those events after the graph has been inserted into the DOM.</p>
+<p>The example code below is an extract of what mermaid does when using the API. The example shows how it is possible to
+bind events to an svg when using the API for rendering.</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> insertSvg = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">svgCode, bindFunctions</span>) </span>{
+    element.innerHTML = svgCode;
+    <span class="hljs-keyword">if</span>(<span class="hljs-keyword">typeof</span> callback !== <span class="hljs-string">&apos;undefined&apos;</span>){
+        callback(id);
+    }
+    bindFunctions(element);
+};
+
+<span class="hljs-keyword">var</span> id = <span class="hljs-string">&apos;theGraph&apos;</span>;
+
+
+mermaidAPI.render(id,txt,insertSvg, element);
+</code></pre>
+<ol>
+<li>The graph is generated using the render call.</li>
+<li>After generation the render function calls the provided callback function, in this case it&apos;s called insertSvg.</li>
+<li>The callback function is called with two parameters, the svg code of the generated graph and a function. This function binds events to the svg <strong>after</strong> it is inserted into the DOM.</li>
+<li>Insert the svg code into the DOM for presentation</li>
+<li>Call the binding function that binds the events</li>
+</ol>
+<h2 id="example-of-a-marked-renderer">Example of a marked renderer</h2>
+<p>This is the renderer used for transforming the documentation from markdown to html with mermaid diagrams in the html.</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> renderer = <span class="hljs-keyword">new</span> marked.Renderer();
+renderer.code = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">code, language</span>) </span>{
+    <span class="hljs-keyword">if</span>(code.match(<span class="hljs-regexp">/^sequenceDiagram/</span>)||code.match(<span class="hljs-regexp">/^graph/</span>)){
+        <span class="hljs-keyword">return</span> <span class="hljs-string">&apos;&lt;div class=&quot;mermaid&quot;&gt;&apos;</span>+code+<span class="hljs-string">&apos;&lt;/div&gt;&apos;</span>;
+    }
+    <span class="hljs-keyword">else</span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-string">&apos;&lt;pre&gt;&lt;code&gt;&apos;</span>+code+<span class="hljs-string">&apos;&lt;/code&gt;&lt;/pre&gt;&apos;</span>;
+    }
+};
+</code></pre>
+<p>Another example in coffeescript that also includes the mermaid script tag into the generated markup.</p>
+<pre><code class="lang-CoffeeScript">marked = <span class="hljs-built_in">require</span> <span class="hljs-string">&apos;marked&apos;</span>
+
+<span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-params">(options)</span> -&gt;</span>
+  hasMermaid = <span class="hljs-literal">false</span>
+  renderer = <span class="hljs-keyword">new</span> marked.Renderer()
+  renderer.defaultCode = renderer.code
+  renderer.code = <span class="hljs-function"><span class="hljs-params">(code, language)</span> -&gt;</span>
+    <span class="hljs-keyword">if</span> language <span class="hljs-keyword">is</span> <span class="hljs-string">&apos;mermaid&apos;</span>
+      html = <span class="hljs-string">&apos;&apos;</span>
+      <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> hasMermaid
+        hasMermaid = <span class="hljs-literal">true</span>
+        html += <span class="hljs-string">&apos;&lt;script src=&quot;&apos;</span>+options.mermaidPath+<span class="hljs-string">&apos;&quot;&gt;&lt;/script&gt;&apos;</span>
+      html + <span class="hljs-string">&apos;&lt;div class=&quot;mermaid&quot;&gt;&apos;</span>+code+<span class="hljs-string">&apos;&lt;/div&gt;&apos;</span>
+    <span class="hljs-keyword">else</span>
+      @defaultCode(code, language)
+
+  renderer
+</code></pre>
+<h2 id="advanced-usage">Advanced usage</h2>
+<p><strong>Error handling</strong></p>
+<p>When the parser encounters invalid syntax the <strong>mermaid.parseError</strong> function is called. It is possible to override this
+function in order to handle the error in an application specific way.</p>
+<p><strong>Parsing text without rendering</strong></p>
+<p>It is also possible to validate the syntax before rendering in order to streamline the user experience. The function
+<strong>mermaid.parse(txt)</strong> takes a text string as an argument and returns true if the text is syntactically correct and
+false if it is not. The parseError function will be called when the parse function returns false.</p>
+<p>The code-example below in meta code illustrates how this could work:</p>
+<pre><code class="lang-javascript">mermaid.parseError = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err,hash</span>)</span>{
+    displayErrorInGui(err);
+};
+
+<span class="hljs-keyword">var</span> textFieldUpdated = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+    <span class="hljs-keyword">var</span> textStr = getTextFromFormField(<span class="hljs-string">&apos;code&apos;</span>);
+
+    <span class="hljs-keyword">if</span>(mermaid.parse(textStr)){
+        reRender(textStr)
+    }
+};
+
+bindEventHandler(<span class="hljs-string">&apos;change&apos;</span>, <span class="hljs-string">&apos;code&apos;</span>, textFieldUpdated);
+</code></pre>
+<h2 id="configuration">Configuration</h2>
+<p>Mermaid takes a number of options which lets you tweak the rendering of the diagrams. Currently there are three ways of
+setting the options in mermaid.</p>
+<ol>
+<li>Instantiation of the configuration using the initialize call</li>
+<li><em>Using the global mermaid object</em> - deprecated</li>
+<li><em>using the global mermaid_config object</em> - deprecated</li>
+<li>Instantiation of the configuration using the <strong>mermaid.init</strong> call</li>
+</ol>
+<p>The list above has two ways to many of doing this. Three are deprecated and will eventually be removed. The list of
+configuration objects are described <a href="mermaidAPI.html">in the mermaidAPI documentation</a>.</p>
+<h2 id="using-the-mermaidapiinitializemermaidinitialize-call">Using the <code>mermaidAPI.initialize</code>/<code>mermaid.initialize</code> call</h2>
+<p>The future proof way of setting the configuration is by using the initialization call to mermaid or mermaidAPi depending
+on what kind of integration you use.</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;../dist/mermaid.js&quot;</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="actionscript">
+    <span class="hljs-keyword">var</span> config = {
+        startOnLoad:<span class="hljs-literal">true</span>,
+        flowchart:{
+            useMaxWidth:<span class="hljs-literal">false</span>,
+            htmlLabels:<span class="hljs-literal">true</span>
+        }
+    };
+    mermaid.initialize(config);
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+<blockquote class="clearfix alert alert-success"><strong class="fa fa-2x fa-lightbulb-o"></strong>
+<p> This is the preferred way of configuring mermaid.</p>
+</blockquote>
+<h2 id="using-the-mermaid-object">Using the mermaid object</h2>
+<p>Is it possible to set some configuration via the mermaid object. The two parameters that are supported using this
+approach are:</p>
+<ul>
+<li>mermaid.startOnLoad</li>
+<li>mermaid.htmlLabels</li>
+</ul>
+<pre><code>mermaid.startOnLoad = true;
+</code></pre><blockquote class="clearfix alert alert-warning"><strong class="fa fa-2x fa-exclamation-triangle"></strong>
+<p> This way of setting the configuration is deprecated instead the preferred way of is to use the initialize method. This functionality is only kept for not breaking existing integrations</p>
+</blockquote>
+<h2 id="using-the-mermaidconfig">Using the mermaid_config</h2>
+<p>Is it possible to set some configuration via the mermaid object. The two parameters that are supported using this
+approach are:</p>
+<ul>
+<li>mermaid_config.startOnLoad</li>
+<li>mermaid_config.htmlLabels</li>
+</ul>
+<pre><code class="lang-javascript">mermaid_config.startOnLoad = <span class="hljs-literal">true</span>;
+</code></pre>
+<blockquote class="clearfix alert alert-warning"><strong class="fa fa-2x fa-exclamation-triangle"></strong>
+<p> This way of setting the configuration is deprecated instead the preferred way of is to use the initialize method. This functionality is only kept for not breaking existing integrations</p>
+</blockquote>
+<h2 id="using-the-mermaidinit-call">Using the mermaid.init call</h2>
+<p>Is it possible to set some configuration via the mermaid object. The two parameters that are supported using this
+approach are:</p>
+<ul>
+<li>mermaid_config.startOnLoad</li>
+<li>mermaid_config.htmlLabels</li>
+</ul>
+<pre><code>mermaid_config.startOnLoad = true;
+</code></pre><blockquote class="clearfix alert alert-warning"><strong class="fa fa-2x fa-exclamation-triangle"></strong>
+<p> This way of setting the configuration is deprecated instead the preferred way of is to use the initialize method. This functionality is only kept for not breaking existing integrations</p>
+</blockquote>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="breakingChanges.html" class="navigation navigation-prev " aria-label="Previous page: Breaking changes">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="flowchart.html" class="navigation navigation-next " aria-label="Next page: Flowchart">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Usage","level":"1.4","depth":1,"next":{"title":"Flowchart","level":"1.5","depth":1,"path":"flowchart.md","ref":"flowchart.md","articles":[]},"previous":{"title":"Breaking changes","level":"1.3","depth":1,"path":"breakingChanges.md","ref":"breakingChanges.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["addcssjs","richquotes"],"pluginsConfig":{"addcssjs":{"css":[],"js":["./scripts/mermaid.min.js","./scripts/index.js"]},"richquotes":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"usage.md","mtime":"2018-02-05T01:05:29.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-03-21T13:40:02.927Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    
+    <script type="text/javascript" src="scripts/mermaid.min.js"></script>
+    
+    <script type="text/javascript" src="scripts/index.js"></script>
+    
+
+    </body>
+</html>
+
