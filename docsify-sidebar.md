@@ -11,7 +11,8 @@
   - [Flowchart](flowchart.md)
   - [Sequence diagram](sequenceDiagram.md)
   - [Gantt](gantt.md)
-
+  - [Pie Chart (beta)](pie.md)
+  
 - Guide
 
   - [Development](development.md)
