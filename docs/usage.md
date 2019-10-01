@@ -57,7 +57,7 @@ An id is also added to mermaid tags without id.
 
 ### To enable click event and tags in nodes
 
-In version 8.2 a security improvement was introduced. A securityLevel configuration was introduced wich sets the level of trust to be used on the parsed diagrams.
+In version 8.2 a security improvement was introduced. A securityLevel configuration was introduced which sets the level of trust to be used on the parsed diagrams.
 
 * **true**: (default) tags in text are encoded, click functionality is disabled
 * false: tags in text are allowed, click functionality is enabledClosed issues: 
