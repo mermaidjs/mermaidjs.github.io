@@ -193,8 +193,6 @@ Don't hesitate to contact me if you want to get involved.
 We use [eslint](https://eslint.org/).
 We recommend you installing [editor plugins](https://eslint.org/docs/user-guide/integrations) so you can get real time lint result.
 
-
-
 ## Test
 
     yarn test
