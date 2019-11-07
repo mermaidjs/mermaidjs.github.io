@@ -69,18 +69,18 @@ A single instance of a class in the diagram contains three compartments:
 ```
 classDiagram
     class BankAccount
-    BankAccount : +String onwer
+    BankAccount : +String owner
     BankAccount : +Bigdecimal balance
     BankAccount : +deposit(amount)
-    BankAccount : +withdrawl(amount)
+    BankAccount : +withdrawal(amount)
 ```
 ```mermaid
 classDiagram
     class BankAccount
-    BankAccount : +String onwer
+    BankAccount : +String owner
     BankAccount : +BigDecimal balance
     BankAccount : +deposit(amount)
-    BankAccount : +withdrawl(amount)
+    BankAccount : +withdrawal(amount)
 ```
 ## Define a class
 
@@ -117,36 +117,36 @@ There are two ways to define the members of a class, and regardless of the which
 
  ```
   class BankAccount
-  BankAccount : +String onwer
+  BankAccount : +String owner
   BankAccount : +BigDecimal balance
   BankAccount : +deposit(amount)
-  BankAccount : +withdrawl(amount)
+  BankAccount : +withdrawal(amount)
   ```
   ```mermaid
     classDiagram
     class BankAccount
-    BankAccount : +String onwer
+    BankAccount : +String owner
     BankAccount : +BigDecimal balance
     BankAccount : +deposit(amount)
-    BankAccount : +withdrawl(amount)
+    BankAccount : +withdrawal(amount)
 ```
 
 - Associate members of a class using **{}** brackets, where members are grouped within curly brackets. Suitable for defining multiple members at once. For example:
 ```
 class BankAccount{
-    +String onwer
+    +String owner
     +BigDecimal balance
     +deposit(amount)
-    +withdrawl(amount)
+    +withdrawal(amount)
 }
 ```
 ```mermaid
     classDiagram
     class BankAccount{
-        +String onwer
+        +String owner
         +BigDecimal balance
         +deposit(amount)
-        +withdrawl(amount)
+        +withdrawal(amount)
 }```
 
 ## Defining Relationship
