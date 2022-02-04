@@ -159,7 +159,7 @@ There are different types of relations defined for classes under UML which are c
 
 Type | Description
 ---  | ---
-<\|--| Inheritance
+<|-- | Inheritance
 *--  | Composition
 o--  | Aggregation
 -->  | Association
