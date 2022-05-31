@@ -43,7 +43,7 @@ This option decides the amount of logging to be used.
 
 Sets the level of trust to be used on the parsed diagrams.
 
--   **true**: (**default**) tags in text are encoded, click functionality is disabeled
+-   **true**: (**default**) tags in text are encoded, click functionality is disabled
 -   **false**: tags in text are allowed, click functionality is enabled
 
 ## startOnLoad
