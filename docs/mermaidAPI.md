@@ -5,7 +5,7 @@
 This is the api to be used when handling the integration with the web page instead of using the default integration
 (mermaid.js).
 
-The core of this api is the **render** function that given a graph definitionas text renders the graph/diagram and
+The core of this api is the **render** function that, given a graph definition text, renders the graph/diagram and
 returns a svg element for the graph. It is is then up to the user of the API to make use of the svg, either insert it
 somewhere in the page or something completely different.
 
@@ -43,7 +43,7 @@ This option decides the amount of logging to be used.
 
 Sets the level of trust to be used on the parsed diagrams.
 
--   **true**: (**default**) tags in text are encoded, click functionality is disabeled
+-   **true**: (**default**) tags in text are encoded, click functionality is disabled
 -   **false**: tags in text are allowed, click functionality is enabled
 
 ## startOnLoad
