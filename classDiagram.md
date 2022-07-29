@@ -220,12 +220,13 @@ It is possible to add a label text to a relation:
 classDiagram
 classA <|-- classB : implements
 classC *-- classD : composition
-classE o-- classF : association
+classE o-- classF : aggregation
 ```
 ```mermaid
 classDiagram
 classA <|-- classB : implements
-classE o-- classF : association
+classC *-- classD : composition
+classE o-- classF : aggregation
 
 ```
 ## Cardinality / Multiplicity on relations
